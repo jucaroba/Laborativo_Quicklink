@@ -113,7 +113,7 @@ export default function LandingMobile() {
           fontWeight: 500,
           color: 'var(--ink)',
         }}>
-          Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo laborativo emocional creativo.
+          Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo<br /><b style={{ fontWeight: 800 }}>laborativo emocional creativo.</b>
         </p>
         <div style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 940', marginTop: 28 }}>
           <Image

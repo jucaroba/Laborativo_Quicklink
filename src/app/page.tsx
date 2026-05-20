@@ -125,30 +125,34 @@ export default function Home() {
 
         {/* Nuestros amigos */}
         <section style={{ padding: '64px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--bg)' }}>
-          <span className="tag">Nuestros amigos</span>
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1.4fr',
             gap: 64,
-            alignItems: 'center',
-            marginTop: 40,
+            alignItems: 'stretch',
           }}>
-            <p style={{
-              fontSize: 18,
-              lineHeight: 1.55,
-              fontWeight: 500,
-              color: 'var(--ink)',
-              margin: 0,
-              maxWidth: '40ch',
-            }}>
-              Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo laborativo emocional creativo.
-            </p>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 940' }}>
+            {/* Columna izquierda: label arriba + párrafo abajo */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start', gap: 32 }}>
+              <span className="tag">Nuestros amigos</span>
+              <p style={{
+                fontSize: 18,
+                lineHeight: 1.55,
+                fontWeight: 500,
+                color: 'var(--ink)',
+                margin: 0,
+                maxWidth: '40ch',
+              }}>
+                Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo<br /><b style={{ fontWeight: 800 }}>laborativo emocional creativo.</b>
+              </p>
+            </div>
+            {/* Columna derecha: imagen — su aspect ratio define la altura,
+                la columna izquierda se estira para coincidir */}
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '1900 / 1002' }}>
               <Image
                 src="/img/amigos.png"
                 alt="Algunos de nuestros clientes"
                 fill
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: 'contain', objectPosition: 'right center' }}
                 sizes="(max-width: 768px) 100vw, 60vw"
               />
             </div>
