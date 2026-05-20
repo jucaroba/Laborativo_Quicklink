@@ -14,6 +14,13 @@ Diseñamos experiencias donde la emoción no sea un accidente…
 sino una herramienta.`,
 ]
 
+const DIMENSIONES_COPY = [
+  { n: '01', idx: 'Intención',   h: 'Sentido',        pair: '¿A dónde vamos?', p: 'El propósito compartido.\nQué hace que este equipo exista y hacia qué horizonte se orienta.' },
+  { n: '02', idx: 'Motivación',  h: 'Energía',        pair: '¿Por qué?',        p: 'Lo que enciende o apaga a las personas.\nLas razones internas detrás del esfuerzo cotidiano.' },
+  { n: '03', idx: 'Interacción', h: 'Vínculos',       pair: '¿Con quién?',      p: 'Cómo nos relacionamos.\nCalidad de la conversación, confianza y colaboración entre personas.' },
+  { n: '04', idx: 'Acción',      h: 'Comportamiento', pair: '¿Qué?',            p: 'Lo que se hace realmente, no lo que se dice.\nHábitos, decisiones y entregas visibles.' },
+]
+
 export default function LandingMobile() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', fontFamily: "'Red Hat Display', sans-serif" }}>
@@ -42,9 +49,8 @@ export default function LandingMobile() {
 
       {/* Manifiesto */}
       <section style={{ background: 'var(--paper)', padding: '48px 20px 64px', borderBottom: '1.5px solid var(--ink)' }}>
-        <span className="eyebrow">Manifiesto</span>
-        <div className="rule" />
-        <div style={{ marginTop: 28 }}>
+        <span className="tag">Manifiesto</span>
+        <div style={{ marginTop: 22 }}>
           {MANIFIESTO.map((parrafo, i) => (
             <p
               key={i}
@@ -60,6 +66,63 @@ export default function LandingMobile() {
               {parrafo}
             </p>
           ))}
+        </div>
+      </section>
+
+      {/* Qué hacemos */}
+      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 28 }}>
+          <div style={{ flex: 1 }}>
+            <span className="tag">Qué hacemos</span>
+            <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px, 7.5vw, 36px)', lineHeight: .98, letterSpacing: '-.03em', marginTop: 16 }}>
+              No queremos certificar la teoría, queremos resolver los temas comunes con experiencias extraordinarias.
+            </h2>
+            <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)' }}>
+              Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en 4 dimensiones.
+            </p>
+          </div>
+        </div>
+        <span className="chip" style={{ marginBottom: 20, display: 'inline-flex' }}>4 dimensiones</span>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', border: '1.5px solid var(--ink)', marginTop: 8 }}>
+          {DIMENSIONES_COPY.map((d, i) => (
+            <div key={d.n} style={{
+              borderBottom: i < DIMENSIONES_COPY.length - 1 ? '1.5px solid var(--ink)' : 'none',
+              padding: '22px 18px 24px',
+              display: 'flex', flexDirection: 'column', gap: 12,
+              background: 'var(--card)',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: 11, letterSpacing: .5, textTransform: 'uppercase', color: 'var(--ink)', fontWeight: 700 }}>{d.idx}</span>
+                <span style={{ fontWeight: 900, fontSize: 13, color: 'var(--ink)' }}>{d.n}</span>
+              </div>
+              <div style={{ width: 48, height: 6, background: 'var(--ink)' }} />
+              <h3 style={{ fontWeight: 900, fontSize: 22, letterSpacing: -.5, lineHeight: 1.05, marginTop: 8 }}>{d.h} / {d.pair}</h3>
+              <p style={{ fontSize: 13, lineHeight: 1.45, color: 'var(--ink-2)', margin: '4px 0 0', fontWeight: 500, whiteSpace: 'pre-line' }}>{d.p}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Nuestros amigos */}
+      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
+        <span className="tag">Nuestros amigos</span>
+        <p style={{
+          marginTop: 24,
+          fontSize: 15,
+          lineHeight: 1.55,
+          fontWeight: 500,
+          color: 'var(--ink)',
+        }}>
+          Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo laborativo emocional creativo.
+        </p>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 940', marginTop: 28 }}>
+          <Image
+            src="/img/amigos.png"
+            alt="Algunos de nuestros clientes"
+            fill
+            style={{ objectFit: 'contain' }}
+            sizes="100vw"
+          />
         </div>
       </section>
 

@@ -82,6 +82,18 @@ button { font-family: inherit; }
 .eyebrow.soft { color: var(--mute); }
 .rule { height: 2px; background: var(--ink); width: 42px; margin: 12px 0 0; }
 
+/* Tag (label negro con texto blanco) */
+.tag {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 /* Chip */
 .chip {
   display: inline-flex;
