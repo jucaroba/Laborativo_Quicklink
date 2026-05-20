@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Red Hat Display'; src: url('/fonts/RedHatDisplay-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:        #F5F5F5;
+  --bg-2:      #E8E8E8;
+  --paper:     #F2F2F2;
+  --card:      #FFFFFF;
+  --ink:       #0A0A0A;
+  --ink-2:     #1A1A1A;
+  --mute:      #7A7A7A;
+  --line:      #0A0A0A;
+  --line-soft: rgba(10,10,10,.14);
+  --neon:      #D8FF00;
+  --destructive: #FF3366;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Red Hat Display', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Red Hat Display tiene la feature "zero" (slashed-zero) que se activa
+     automáticamente con tabular-nums. La desactivamos globalmente para
+     que el "0" siempre use el glifo proporcional sin barra diagonal. */
+  font-feature-settings: "zero" 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: 'Red Hat Display', sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+button { font-family: inherit; }
+
+/* Botones */
+.btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  letter-spacing: -0.01em;
+}
+.btn:hover { background: #fff; color: var(--ink); border-color: var(--ink); }
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { background: #fff; color: var(--ink); border-color: var(--ink); }
+
+/* Eyebrow + rule */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 700;
+}
+.eyebrow.soft { color: var(--mute); }
+.rule { height: 2px; background: var(--ink); width: 42px; margin: 12px 0 0; }
+
+/* Chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--line);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Switch desktop / mobile */
+.only-desktop { display: block; }
+.only-mobile  { display: none; }
+@media (max-width: 768px) {
+  .only-desktop { display: none !important; }
+  .only-mobile  { display: block !important; }
 }
