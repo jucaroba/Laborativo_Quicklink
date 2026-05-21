@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import YouTubeLite from '@/components/landing/YouTubeLite'
 
 const MANIFIESTO = [
   `Después de muchos años trabajando con equipos entendimos algo muy simple:
@@ -146,21 +147,9 @@ export default function LandingMobile() {
 
         {/* Caso destacado */}
         <div style={{ marginTop: 22, border: '1.5px solid var(--ink)', background: 'var(--card)' }}>
-          {/* Video placeholder */}
-          <div style={{ position: 'relative', aspectRatio: '16 / 9', background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)', overflow: 'hidden' }}>
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
-                width: 64, height: 64,
-                border: '2px solid #fff',
-                borderRadius: '50%',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(0,0,0,.4)',
-              }}>
-                <svg width="20" height="22" viewBox="0 0 28 32" fill="#fff" style={{ marginLeft: 3 }}>
-                  <polygon points="0,0 28,16 0,32" />
-                </svg>
-              </div>
-            </div>
+          {/* Video YouTube (lite embed) */}
+          <div style={{ position: 'relative', aspectRatio: '16 / 9', overflow: 'hidden' }}>
+            <YouTubeLite id="ovDlsGJNJps" title={`Caso: ${CASO_HERO.cliente}`} />
           </div>
           {/* Texto */}
           <div style={{ padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 16, borderTop: '1.5px solid var(--ink)' }}>

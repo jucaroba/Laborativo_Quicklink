@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import LandingMobile from '@/components/landing/LandingMobile'
+import YouTubeLite from '@/components/landing/YouTubeLite'
 
 const MANIFIESTO = [
   `Después de muchos años trabajando con equipos entendimos algo muy simple:
@@ -222,34 +223,9 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Lado derecho: placeholder de video */}
-            <div style={{ position: 'relative', aspectRatio: '16 / 9', background: 'var(--ink)', overflow: 'hidden' }}>
-              {/* Reemplazar este div por <Image src="/img/caso-hero-thumb.jpg" .../> cuando esté el thumbnail */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-              }}>
-                {/* Play button */}
-                <div style={{
-                  width: 88, height: 88,
-                  border: '2px solid #fff',
-                  borderRadius: '50%',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(0,0,0,.4)',
-                }}>
-                  <svg width="28" height="32" viewBox="0 0 28 32" fill="#fff" style={{ marginLeft: 4 }}>
-                    <polygon points="0,0 28,16 0,32" />
-                  </svg>
-                </div>
-                <span style={{
-                  position: 'absolute', bottom: 20, left: 20,
-                  fontSize: 10, color: '#fff', opacity: .65,
-                  letterSpacing: '.08em', textTransform: 'uppercase', fontWeight: 600,
-                }}>
-                  Video del caso · placeholder
-                </span>
-              </div>
+            {/* Lado derecho: video YouTube (lite embed) */}
+            <div style={{ position: 'relative', aspectRatio: '16 / 9', overflow: 'hidden' }}>
+              <YouTubeLite id="ovDlsGJNJps" title={`Caso: ${CASO_HERO.cliente}`} />
             </div>
           </div>
 
