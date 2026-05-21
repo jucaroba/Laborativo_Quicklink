@@ -89,8 +89,8 @@ export default function TestimoniosCarousel({ testimonios, autoAdvanceMs = 8000 
         {/* Content column */}
         <div className="testimonios-content">
           {/* Big quote mark decorativo */}
-          <div aria-hidden style={{
-            fontWeight: 900, fontSize: 140, lineHeight: 0.7,
+          <div aria-hidden className="testimonios-quote-mark" style={{
+            fontWeight: 900,
             color: 'var(--ink)',
             margin: 0,
           }}>&ldquo;</div>
@@ -100,13 +100,13 @@ export default function TestimoniosCarousel({ testimonios, autoAdvanceMs = 8000 
             {testimonios.map((t, i) => (
               <blockquote
                 key={i}
+                className="testimonios-quote"
                 style={{
                   position: i === index ? 'relative' : 'absolute',
                   inset: i === index ? undefined : 0,
                   opacity: i === index ? 1 : 0,
                   transition: 'opacity .4s ease',
                   margin: 0,
-                  fontSize: 'clamp(20px, 1.9vw, 28px)',
                   lineHeight: 1.32,
                   fontWeight: 500,
                   letterSpacing: '-0.005em',

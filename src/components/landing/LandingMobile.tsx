@@ -127,7 +127,7 @@ export default function LandingMobile() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 28 }}>
           <div style={{ flex: 1 }}>
             <span className="tag">Qué hacemos</span>
-            <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px, 7.5vw, 36px)', lineHeight: .98, letterSpacing: '-0.025em', marginTop: 16 }}>
+            <h2 style={{ fontWeight: 900, fontSize: 'clamp(26px, 7vw, 32px)', lineHeight: .98, letterSpacing: '-0.025em', marginTop: 16 }}>
               No queremos certificar la teoría, queremos resolver los temas comunes con experiencias extraordinarias.
             </h2>
             <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)' }}>
