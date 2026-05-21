@@ -107,7 +107,7 @@ export default function LandingMobile() {
               <p
                 key={i}
                 style={{
-                  fontSize: 17,
+                  fontSize: 16,
                   lineHeight: 1.5,
                   fontWeight: 500,
                   margin: i === 0 ? 0 : '24px 0 0',
@@ -168,7 +168,7 @@ export default function LandingMobile() {
         }}>
           Después de diez años, seis países, cuarenta y tres clientes, y haber puesto a prueba miles de experiencias hoy somos expertos en transformar, traducir y redefinir la cultura corporativa a través de nuestro modelo<br /><b style={{ fontWeight: 800 }}>laborativo emocional creativo.</b>
         </p>
-        <div style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 940', marginTop: 28 }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '1900 / 1002', marginTop: 28 }}>
           <Image
             src="/img/amigos.png"
             alt="Algunos de nuestros clientes"
