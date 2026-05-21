@@ -22,6 +22,38 @@ const DIMENSIONES_COPY = [
   { n: '04', idx: 'Acción',      h: 'Comportamiento', pair: '¿Qué?',            p: 'Lo que se hace realmente, no lo que se dice.\nHábitos, decisiones y entregas visibles.' },
 ]
 
+const CASO_HERO = {
+  cliente: 'Cliente destacado',
+  reto: 'Una frase corta y poderosa que resume el reto del cliente.',
+  dato: '+38%',
+  datoLabel: 'en compromiso del equipo',
+  resultado: 'Resultado en una frase explicando el impacto real del trabajo, sin tecnicismos.',
+}
+
+const CASOS_THUMBS = [
+  {
+    cliente: 'Cliente A',
+    reto: 'Frase del reto de este caso.',
+    dato: '200',
+    datoLabel: 'líderes alineados',
+    resultado: 'Resultado del caso explicado en una frase corta.',
+  },
+  {
+    cliente: 'Cliente B',
+    reto: 'Frase del reto de este caso.',
+    dato: '6 países',
+    datoLabel: 'en 4 meses',
+    resultado: 'Resultado del caso explicado en una frase corta.',
+  },
+  {
+    cliente: 'Cliente C',
+    reto: 'Frase del reto de este caso.',
+    dato: '×3',
+    datoLabel: 'velocidad de decisión',
+    resultado: 'Resultado del caso explicado en una frase corta.',
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -156,6 +188,103 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 60vw"
               />
             </div>
+          </div>
+        </section>
+
+        {/* Casos de éxito */}
+        <section style={{ padding: '80px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
+          <span className="tag">Casos de éxito</span>
+
+          {/* Caso destacado (hero) */}
+          <div style={{
+            marginTop: 32,
+            border: '1.5px solid var(--ink)',
+            background: 'var(--card)',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1.3fr',
+          }}>
+            {/* Lado izquierdo: texto */}
+            <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: 22, borderRight: '1.5px solid var(--ink)' }}>
+              <span className="tag" style={{ alignSelf: 'flex-start' }}>{CASO_HERO.cliente}</span>
+              <h3 style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.2vw, 30px)', letterSpacing: '-0.02em', lineHeight: 1.1, margin: 0, maxWidth: '24ch' }}>
+                {CASO_HERO.reto}
+              </h3>
+              <div style={{ marginTop: 'auto' }}>
+                <div style={{ fontWeight: 900, fontSize: 'clamp(56px, 5.6vw, 80px)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
+                  {CASO_HERO.dato}
+                </div>
+                <div style={{ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 8 }}>
+                  {CASO_HERO.datoLabel}
+                </div>
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0, maxWidth: '40ch' }}>
+                {CASO_HERO.resultado}
+              </p>
+            </div>
+
+            {/* Lado derecho: placeholder de video */}
+            <div style={{ position: 'relative', aspectRatio: '16 / 9', background: 'var(--ink)', overflow: 'hidden' }}>
+              {/* Reemplazar este div por <Image src="/img/caso-hero-thumb.jpg" .../> cuando esté el thumbnail */}
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
+              }}>
+                {/* Play button */}
+                <div style={{
+                  width: 88, height: 88,
+                  border: '2px solid #fff',
+                  borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: 'rgba(0,0,0,.4)',
+                }}>
+                  <svg width="28" height="32" viewBox="0 0 28 32" fill="#fff" style={{ marginLeft: 4 }}>
+                    <polygon points="0,0 28,16 0,32" />
+                  </svg>
+                </div>
+                <span style={{
+                  position: 'absolute', bottom: 20, left: 20,
+                  fontSize: 10, color: '#fff', opacity: .65,
+                  letterSpacing: '.08em', textTransform: 'uppercase', fontWeight: 600,
+                }}>
+                  Video del caso · placeholder
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 thumbs */}
+          <div style={{
+            marginTop: 16,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            border: '1.5px solid var(--ink)',
+            background: 'var(--card)',
+          }}>
+            {CASOS_THUMBS.map((c, i) => (
+              <div key={i} style={{
+                padding: '28px 24px 30px',
+                borderRight: i < CASOS_THUMBS.length - 1 ? '1.5px solid var(--ink)' : 'none',
+                display: 'flex', flexDirection: 'column', gap: 16,
+                minHeight: 260,
+              }}>
+                <span className="tag" style={{ alignSelf: 'flex-start' }}>{c.cliente}</span>
+                <h4 style={{ fontWeight: 800, fontSize: 17, letterSpacing: '-0.01em', lineHeight: 1.25, margin: 0, maxWidth: '24ch' }}>
+                  {c.reto}
+                </h4>
+                <div style={{ marginTop: 'auto' }}>
+                  <div style={{ fontWeight: 900, fontSize: 40, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
+                    {c.dato}
+                  </div>
+                  <div style={{ fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 6 }}>
+                    {c.datoLabel}
+                  </div>
+                </div>
+                <p style={{ fontSize: 13, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+                  {c.resultado}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

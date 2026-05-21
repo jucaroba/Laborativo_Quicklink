@@ -21,6 +21,20 @@ const DIMENSIONES_COPY = [
   { n: '04', idx: 'Acción',      h: 'Comportamiento', pair: '¿Qué?',            p: 'Lo que se hace realmente, no lo que se dice.\nHábitos, decisiones y entregas visibles.' },
 ]
 
+const CASO_HERO = {
+  cliente: 'Cliente destacado',
+  reto: 'Una frase corta y poderosa que resume el reto del cliente.',
+  dato: '+38%',
+  datoLabel: 'en compromiso del equipo',
+  resultado: 'Resultado en una frase explicando el impacto real del trabajo, sin tecnicismos.',
+}
+
+const CASOS_THUMBS = [
+  { cliente: 'Cliente A', reto: 'Frase del reto de este caso.', dato: '200', datoLabel: 'líderes alineados', resultado: 'Resultado del caso explicado en una frase corta.' },
+  { cliente: 'Cliente B', reto: 'Frase del reto de este caso.', dato: '6 países', datoLabel: 'en 4 meses', resultado: 'Resultado del caso explicado en una frase corta.' },
+  { cliente: 'Cliente C', reto: 'Frase del reto de este caso.', dato: '×3', datoLabel: 'velocidad de decisión', resultado: 'Resultado del caso explicado en una frase corta.' },
+]
+
 export default function LandingMobile() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', fontFamily: "'Red Hat Display', sans-serif" }}>
@@ -123,6 +137,76 @@ export default function LandingMobile() {
             style={{ objectFit: 'contain' }}
             sizes="100vw"
           />
+        </div>
+      </section>
+
+      {/* Casos de éxito */}
+      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
+        <span className="tag">Casos de éxito</span>
+
+        {/* Caso destacado */}
+        <div style={{ marginTop: 22, border: '1.5px solid var(--ink)', background: 'var(--card)' }}>
+          {/* Video placeholder */}
+          <div style={{ position: 'relative', aspectRatio: '16 / 9', background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{
+                width: 64, height: 64,
+                border: '2px solid #fff',
+                borderRadius: '50%',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'rgba(0,0,0,.4)',
+              }}>
+                <svg width="20" height="22" viewBox="0 0 28 32" fill="#fff" style={{ marginLeft: 3 }}>
+                  <polygon points="0,0 28,16 0,32" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          {/* Texto */}
+          <div style={{ padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 16, borderTop: '1.5px solid var(--ink)' }}>
+            <span className="tag" style={{ alignSelf: 'flex-start' }}>{CASO_HERO.cliente}</span>
+            <h3 style={{ fontWeight: 900, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.15, margin: 0 }}>
+              {CASO_HERO.reto}
+            </h3>
+            <div>
+              <div style={{ fontWeight: 900, fontSize: 48, letterSpacing: '-0.04em', lineHeight: 0.95 }}>
+                {CASO_HERO.dato}
+              </div>
+              <div style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 6 }}>
+                {CASO_HERO.datoLabel}
+              </div>
+            </div>
+            <p style={{ fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+              {CASO_HERO.resultado}
+            </p>
+          </div>
+        </div>
+
+        {/* 3 thumbs apilados */}
+        <div style={{ marginTop: 12, border: '1.5px solid var(--ink)', background: 'var(--card)' }}>
+          {CASOS_THUMBS.map((c, i) => (
+            <div key={i} style={{
+              padding: '22px 20px 24px',
+              borderBottom: i < CASOS_THUMBS.length - 1 ? '1.5px solid var(--ink)' : 'none',
+              display: 'flex', flexDirection: 'column', gap: 12,
+            }}>
+              <span className="tag" style={{ alignSelf: 'flex-start' }}>{c.cliente}</span>
+              <h4 style={{ fontWeight: 800, fontSize: 16, letterSpacing: '-0.01em', lineHeight: 1.25, margin: 0 }}>
+                {c.reto}
+              </h4>
+              <div>
+                <div style={{ fontWeight: 900, fontSize: 32, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
+                  {c.dato}
+                </div>
+                <div style={{ fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 5 }}>
+                  {c.datoLabel}
+                </div>
+              </div>
+              <p style={{ fontSize: 13, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+                {c.resultado}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
