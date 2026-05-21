@@ -63,72 +63,83 @@ export default function Home() {
       </div>
       <div className="only-desktop" style={{ background: 'var(--bg)', minHeight: '100vh', fontFamily: "'Red Hat Display', sans-serif" }}>
 
-        {/* Header con logo */}
-        <header style={{ padding: '48px 56px 0' }}>
-          <Image
-            src="/brand/laborativo-logo.png"
-            alt="Laborativo"
-            width={200}
-            height={51}
-            style={{ objectFit: 'contain', display: 'block', marginLeft: -20 }}
-            priority
-          />
-        </header>
+        {/* Header + Hero + Manifiesto con foto de fondo */}
+        <div style={{
+          position: 'relative',
+          background: `linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.55)), url('/img/hero-bg.png') center/cover no-repeat`,
+          color: '#fff',
+          borderBottom: '1.5px solid #fff',
+        }}>
+          {/* Header con logo */}
+          <header style={{ padding: '48px 56px 0' }}>
+            <Image
+              src="/brand/laborativo-logo.png"
+              alt="Laborativo"
+              width={200}
+              height={51}
+              style={{ objectFit: 'contain', display: 'block', marginLeft: -20, filter: 'invert(1) brightness(2)' }}
+              priority
+            />
+          </header>
 
-        {/* Hero + Manifiesto en dos columnas */}
-        <section style={{ padding: '72px 56px 104px', borderBottom: '1.5px solid var(--ink)' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'auto 1fr',
-            gap: 100,
-            alignItems: 'flex-end',
-          }}>
-            {/* Columna izquierda: H1 en 4 líneas */}
-            <h1 style={{
-              fontWeight: 900,
-              fontSize: 'clamp(48px, 5.5vw, 88px)',
-              lineHeight: 0.88,
-              letterSpacing: '-0.045em',
-              paddingBottom: '0.08em',
-              margin: 0,
+          {/* Hero + Manifiesto en dos columnas */}
+          <section style={{ padding: '72px 56px 104px' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'auto 1fr',
+              gap: 100,
+              alignItems: 'flex-end',
             }}>
-              consultoría<br />
-              creativa<br />
-              basada en<br />
-              la emoción.
-            </h1>
+              {/* Columna izquierda: H1 en 4 líneas */}
+              <h1 style={{
+                fontWeight: 900,
+                fontSize: 'clamp(48px, 5.5vw, 88px)',
+                lineHeight: 0.88,
+                letterSpacing: '-0.025em',
+                paddingBottom: '0.08em',
+                margin: 0,
+                color: '#fff',
+              }}>
+                consultoría<br />
+                creativa<br />
+                basada en<br />
+                la emoción.
+              </h1>
 
-            {/* Columna derecha: Manifiesto a 18px */}
-            <div style={{ maxWidth: '55%' }}>
-              <span className="tag">Manifiesto</span>
-              <div style={{ marginTop: 28 }}>
-                {MANIFIESTO.map((parrafo, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.55,
-                      fontWeight: 500,
-                      margin: i === 0 ? 0 : '22px 0 0',
-                      whiteSpace: 'pre-line',
-                      color: 'var(--ink)',
-                    }}
-                  >
-                    {parrafo}
-                  </p>
-                ))}
+              {/* Columna derecha: Manifiesto a 16px */}
+              <div style={{ maxWidth: '55%' }}>
+                <span className="tag" style={{ background: '#fff', color: 'var(--ink)' }}>Manifiesto</span>
+                <div style={{ marginTop: 28 }}>
+                  {MANIFIESTO.map((parrafo, i) => (
+                    <p
+                      key={i}
+                      style={{
+                        fontSize: 16,
+                        lineHeight: 1.55,
+                        fontWeight: 500,
+                        margin: i === 0 ? 0 : '22px 0 0',
+                        whiteSpace: 'pre-line',
+                        color: '#fff',
+                      }}
+                    >
+                      {parrafo}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         {/* Qué hacemos — mismo diseño que las dimensiones del diagnóstico */}
         <section style={{ padding: '64px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, marginBottom: 40 }}>
             <div>
               <span className="tag">Qué hacemos</span>
-              <h2 style={{ fontWeight: 900, fontSize: 'clamp(36px,4.2vw,56px)', lineHeight: .95, letterSpacing: '-.035em', maxWidth: '30ch', marginTop: 24 }}>
-                No queremos certificar la teoría, queremos resolver los temas comunes con experiencias extraordinarias.
+              <h2 style={{ fontWeight: 900, fontSize: 'clamp(36px,4.2vw,56px)', lineHeight: .95, letterSpacing: '-0.025em', marginTop: 24 }}>
+                No queremos certificar la teoría,<br />
+                queremos resolver los temas comunes<br />
+                con experiencias extraordinarias.
               </h2>
               <p style={{ marginTop: 20, fontSize: 16, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', maxWidth: '60ch' }}>
                 Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en 4 dimensiones.

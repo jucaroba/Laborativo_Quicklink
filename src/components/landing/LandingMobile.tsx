@@ -40,56 +40,62 @@ export default function LandingMobile() {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', fontFamily: "'Red Hat Display', sans-serif" }}>
 
-      {/* Hero */}
-      <section style={{ padding: '24px 20px 48px', borderBottom: '1.5px solid var(--ink)' }}>
-        <Image
-          src="/brand/laborativo-logo.png"
-          alt="Laborativo"
-          width={140}
-          height={36}
-          style={{ objectFit: 'contain', display: 'block', marginLeft: -12 }}
-          priority
-        />
-        <h1 style={{
-          fontWeight: 900,
-          fontSize: 'clamp(36px, 11vw, 52px)',
-          lineHeight: 0.92,
-          letterSpacing: '-0.035em',
-          paddingBottom: '0.08em',
-          marginTop: 48,
-        }}>
-          consultoría creativa basada en la emoción.
-        </h1>
-      </section>
+      {/* Hero + Manifiesto con foto de fondo */}
+      <div style={{
+        background: `linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.55)), url('/img/hero-bg.png') center/cover no-repeat`,
+        color: '#fff',
+        borderBottom: '1.5px solid #fff',
+      }}>
+        <section style={{ padding: '24px 20px 48px' }}>
+          <Image
+            src="/brand/laborativo-logo.png"
+            alt="Laborativo"
+            width={140}
+            height={36}
+            style={{ objectFit: 'contain', display: 'block', marginLeft: -12, filter: 'invert(1) brightness(2)' }}
+            priority
+          />
+          <h1 style={{
+            fontWeight: 900,
+            fontSize: 'clamp(36px, 11vw, 52px)',
+            lineHeight: 0.92,
+            letterSpacing: '-0.025em',
+            paddingBottom: '0.08em',
+            marginTop: 48,
+            color: '#fff',
+          }}>
+            consultoría creativa basada en la emoción.
+          </h1>
+        </section>
 
-      {/* Manifiesto */}
-      <section style={{ background: 'var(--paper)', padding: '48px 20px 64px', borderBottom: '1.5px solid var(--ink)' }}>
-        <span className="tag">Manifiesto</span>
-        <div style={{ marginTop: 22 }}>
-          {MANIFIESTO.map((parrafo, i) => (
-            <p
-              key={i}
-              style={{
-                fontSize: 17,
-                lineHeight: 1.5,
-                fontWeight: 500,
-                margin: i === 0 ? 0 : '24px 0 0',
-                whiteSpace: 'pre-line',
-                color: 'var(--ink)',
-              }}
-            >
-              {parrafo}
-            </p>
-          ))}
-        </div>
-      </section>
+        <section style={{ padding: '48px 20px 64px' }}>
+          <span className="tag" style={{ background: '#fff', color: 'var(--ink)' }}>Manifiesto</span>
+          <div style={{ marginTop: 22 }}>
+            {MANIFIESTO.map((parrafo, i) => (
+              <p
+                key={i}
+                style={{
+                  fontSize: 17,
+                  lineHeight: 1.5,
+                  fontWeight: 500,
+                  margin: i === 0 ? 0 : '24px 0 0',
+                  whiteSpace: 'pre-line',
+                  color: '#fff',
+                }}
+              >
+                {parrafo}
+              </p>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* Qué hacemos */}
       <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 28 }}>
           <div style={{ flex: 1 }}>
             <span className="tag">Qué hacemos</span>
-            <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px, 7.5vw, 36px)', lineHeight: .98, letterSpacing: '-.03em', marginTop: 16 }}>
+            <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px, 7.5vw, 36px)', lineHeight: .98, letterSpacing: '-0.025em', marginTop: 16 }}>
               No queremos certificar la teoría, queremos resolver los temas comunes con experiencias extraordinarias.
             </h2>
             <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)' }}>
