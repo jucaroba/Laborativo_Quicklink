@@ -88,15 +88,11 @@ export default function TestimoniosCarousel({ testimonios, autoAdvanceMs = 8000 
 
         {/* Content column */}
         <div className="testimonios-content">
-          {/* Big quote mark decorativo */}
-          <div aria-hidden className="testimonios-quote-mark" style={{
-            fontWeight: 900,
-            color: 'var(--ink)',
-            margin: 0,
-          }}>&ldquo;</div>
+          {/* Chip con compañía (en vez de la comilla) */}
+          <span className="chip testimonios-company">{current.company}</span>
 
           {/* Quote text con cross-fade */}
-          <div style={{ position: 'relative', flex: 1, minHeight: 100 }}>
+          <div style={{ position: 'relative', flex: 1, minHeight: 100, marginTop: 24 }}>
             {testimonios.map((t, i) => (
               <blockquote
                 key={i}
@@ -114,7 +110,7 @@ export default function TestimoniosCarousel({ testimonios, autoAdvanceMs = 8000 
                   maxWidth: '34ch',
                 }}
               >
-                {t.quote}
+                {`“${t.quote}”`}
               </blockquote>
             ))}
           </div>
@@ -128,7 +124,7 @@ export default function TestimoniosCarousel({ testimonios, autoAdvanceMs = 8000 
               fontSize: 11, letterSpacing: '.08em', textTransform: 'uppercase',
               fontWeight: 600, color: 'var(--ink)',
             }}>
-              {current.role} · {current.company}
+              {current.role}
             </span>
           </div>
         </div>

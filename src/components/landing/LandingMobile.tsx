@@ -36,28 +36,28 @@ const TESTIMONIOS: Testimonio[] = [
     quote: 'Lo que hicimos con Laborativo no fue un taller, fue una transformación. El equipo salió hablando un idioma común y eso cambió cómo decidimos todo lo que sigue.',
     name: 'Andrea Cruz',
     role: 'Cargo pendiente',
-    company: 'Compañía pendiente',
+    company: 'Cervecería Nacional / Ecuador',
     photo: '/img/testimonios/andrea-cruz.png',
   },
   {
     quote: 'Por primera vez sentimos que la cultura era un activo, no un problema. Esa claridad emocional es la diferencia.',
     name: 'Manuela Martínez',
     role: 'Cargo pendiente',
-    company: 'Compañía pendiente',
+    company: 'Alpina / Colombia',
     photo: '/img/testimonios/manuela-martinez.png',
   },
   {
     quote: 'Llevamos los hallazgos a junta directiva y la conversación cambió por completo. Ahora hablamos de lo que importa.',
     name: 'Natalia Caicedo',
     role: 'Cargo pendiente',
-    company: 'Compañía pendiente',
+    company: 'Grupo Modelo / México',
     photo: '/img/testimonios/natalia-caicedo.png',
   },
   {
     quote: 'Diseñaron una experiencia que ningún otro proveedor nos había mostrado. Salimos con preguntas mejores y decisiones más rápidas.',
     name: 'Natalia Prada',
     role: 'Cargo pendiente',
-    company: 'Compañía pendiente',
+    company: 'Ubits / Colombia',
     photo: '/img/testimonios/natalia-prada.png',
   },
 ]
@@ -239,9 +239,8 @@ export default function LandingMobile() {
 
       {/* Testimonios */}
       <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 22 }}>
+        <div style={{ marginBottom: 22 }}>
           <span className="tag">Testimonios</span>
-          <span className="chip">{TESTIMONIOS.length} voces</span>
         </div>
         <TestimoniosCarousel testimonios={TESTIMONIOS} />
       </section>

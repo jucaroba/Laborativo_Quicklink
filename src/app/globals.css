@@ -124,12 +124,11 @@ button { font-family: inherit; }
   flex-direction: column;
   overflow: hidden;
 }
-.testimonios-quote-mark {
-  font-size: 140px;
-  line-height: 0.7;
-}
 .testimonios-quote {
   font-size: clamp(20px, 1.9vw, 28px);
+}
+.testimonios-company {
+  align-self: flex-start;
 }
 .testimonios-nav {
   all: unset;
@@ -161,8 +160,7 @@ button { font-family: inherit; }
     border-right: none;
     border-bottom: 1.5px solid var(--ink);
   }
-  .testimonios-content { padding: 4px 22px 22px; min-height: 0; }
-  .testimonios-quote-mark { font-size: 96px; line-height: 0.55; }
+  .testimonios-content { padding: 22px 22px 24px; min-height: 0; }
   .testimonios-quote { font-size: 17px; }
   .testimonios-nav { width: 48px; height: 48px; }
 }
