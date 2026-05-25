@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import YouTubeLite from '@/components/landing/YouTubeLite'
-import TestimoniosCarousel, { type Testimonio } from '@/components/landing/TestimoniosCarousel'
+import TestimoniosCarouselV2, { type Testimonio } from '@/components/landing/TestimoniosCarouselV2'
 
 const MANIFIESTO = [
   `Después de muchos años trabajando con equipos entendimos algo muy simple:
@@ -33,32 +33,60 @@ const CASO_HERO = {
 
 const TESTIMONIOS: Testimonio[] = [
   {
-    quote: 'Lo que hicimos con Laborativo no fue un taller, fue una transformación. El equipo salió hablando un idioma común y eso cambió cómo decidimos todo lo que sigue.',
+    quote: 'Crearon un cambio de mindset en nuestros líderes y generaron conciencia sobre el liderazgo inclusivo, entendiendo rápidamente la cultura y necesidades de la compañía.',
+    name: 'Natalia Caicedo',
+    role: 'Head of Talent',
+    company: 'Grupo Modelo / México',
+    photo: null,
+  },
+  {
+    quote: 'Lina y su equipo tienen una gran energía. Cambiaron la forma de nuestros entrenamientos, los hicieron mucho más dinámicos y personalizados a nuestra cultura empresarial. Creamos el programa Beer Leaders para las 60 personas con mayor potencial de crecimiento, enfocando en desarrollar sus skills de liderazgo, bienestar y diversidad e inclusión.',
     name: 'Andrea Cruz',
-    role: 'Cargo pendiente',
+    role: 'Talent Management and Learning Lead',
     company: 'Cervecería Nacional / Ecuador',
     photo: '/img/testimonios/andrea-cruz.png',
   },
   {
-    quote: 'Por primera vez sentimos que la cultura era un activo, no un problema. Esa claridad emocional es la diferencia.',
+    quote: '¡Con ellos siempre ha sido increíble trabajar! Conectan con la gente como un colaborador más y eso hace que uno confíe ciegamente en su trabajo.',
     name: 'Manuela Martínez',
-    role: 'Cargo pendiente',
+    role: 'Líder de Cultura, Diversidad & Bienestar',
     company: 'Alpina / Colombia',
     photo: '/img/testimonios/manuela-martinez.png',
   },
   {
-    quote: 'Llevamos los hallazgos a junta directiva y la conversación cambió por completo. Ahora hablamos de lo que importa.',
-    name: 'Natalia Caicedo',
-    role: 'Cargo pendiente',
-    company: 'Grupo Modelo / México',
-    photo: '/img/testimonios/natalia-caicedo.png',
+    quote: 'Trabajar con Laborativo es tener un aliado estratégico que entiende y soluciona de manera efectiva las necesidades del negocio, desarrollando competencias de manera experiencial.',
+    name: 'Natalia Prada',
+    role: 'Gerente Talento Humano',
+    company: 'Ubits / Colombia - México',
+    photo: '/img/testimonios/natalia-prada.png',
   },
   {
-    quote: 'Diseñaron una experiencia que ningún otro proveedor nos había mostrado. Salimos con preguntas mejores y decisiones más rápidas.',
-    name: 'Natalia Prada',
-    role: 'Cargo pendiente',
-    company: 'Ubits / Colombia',
-    photo: '/img/testimonios/natalia-prada.png',
+    quote: 'El equipo de Laborativo ha trabajado de la mano con nuestra primera línea de ventas en el que participaron 14 Gerentes y su Director. En este espacio se realizaron varias dinámicas que lograron fortalecer la colaboración, trabajo en equipo y liderazgo. El resultado fue una inyección de energía sensacional hacia ellos y reflexionar cómo podemos mejorar nuestras dinámicas de trabajo y lograr conectarnos de manera más efectiva.',
+    name: 'Ivanna Von Schoettler',
+    role: 'Commercial BP Manager',
+    company: 'Cervecería Nacional / Ecuador',
+    photo: '/img/testimonios/ivanna-von-schoettler.png',
+  },
+  {
+    quote: 'La mejor forma de aprender es cuando vives una experiencia. Con el equipo de Laborativo tienen el mejor aliado para construir ¡las mejores experiencias personalizadas que llevan a cualquier equipo de trabajo a otro nivel! Los retos, actividades y dinámicas de grupo que he vivido con ellos han sido la mejor forma de reflexionar para trabajar sobre las competencias de liderazgo, relacionamiento y cercanía personales y de equipo. ¡Súmenle la buena energía de todas las personas del equipo de Laborativo para tener un espacio que recarga a cualquiera!',
+    name: 'Nicolás Nieto',
+    role: 'Sales Manager Drug & Pharma Channel',
+    company: 'Alpina / Colombia',
+    photo: '/img/testimonios/nicolas-nieto.png',
+  },
+  {
+    quote: 'Contar con el apoyo de Laborativo para las capacitaciones de nuestro equipo ha sido un hit, pues tienen pasión por lo que hacen y su compromiso va más allá de lo contratado. Se involucraron en el desarrollo de la mejor solución para nuestra agencia y esto impactó positivamente al equipo potencializando sus capacidades de liderazgo a través de actividades disruptivas que realmente marcan la diferencia.',
+    name: 'Sonia Quesada',
+    role: 'Fundadora y CEO',
+    company: 'High Results / Estados Unidos',
+    photo: '/img/testimonios/sonia-quesada.png',
+  },
+  {
+    quote: 'Trabajar con Laborativo ha sido de las mejores experiencias que hemos tenido, en cualquier sesión que tengas con ellos muestran como les apasiona lo que hacen y logras aprender de ellos mientras disfrutas. Laborativo nos dio un train of trainers donde el equipo de HR fue capacitado para poder manejar equipos grandes y mantenerlos preparados para recibir información. Sin duda Laborativo se ha vuelto aliada fundamental para el entrenamiento de nuestros talentos.',
+    name: 'Analia Castillo',
+    role: 'Talent Attraction & EVP Lead',
+    company: 'Cervecería Nacional / México',
+    photo: '/img/testimonios/analia-castillo.png',
   },
 ]
 
@@ -238,11 +266,11 @@ export default function LandingMobile() {
       </section>
 
       {/* Testimonios */}
-      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
+      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
         <div style={{ marginBottom: 22 }}>
           <span className="tag">Testimonios</span>
         </div>
-        <TestimoniosCarousel testimonios={TESTIMONIOS} />
+        <TestimoniosCarouselV2 testimonios={TESTIMONIOS} />
       </section>
 
       {/* Footer */}
