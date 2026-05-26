@@ -24,11 +24,11 @@ const DIMENSIONES_COPY = [
 ]
 
 const CASO_HERO = {
-  cliente: 'Cliente destacado',
-  reto: 'Una frase corta y poderosa que resume el reto del cliente.',
-  dato: '+38%',
-  datoLabel: 'en compromiso del equipo',
-  resultado: 'Resultado en una frase explicando el impacto real del trabajo, sin tecnicismos.',
+  cliente: 'Grupo Modelo / México',
+  reto: '¡Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing no era solo el reto: era la oportunidad de transformar un grupo en equipo! Y lo logramos.',
+  dato: '99%',
+  datoLabel: 'NPS score',
+  resultado: 'Alinear y conectar a los 10 líderes del equipo fue el primer paso para lograr algo mucho más grande: movilizar a toda el área hacia una misma visión.',
 }
 
 const TESTIMONIOS: Testimonio[] = [
@@ -37,7 +37,7 @@ const TESTIMONIOS: Testimonio[] = [
     name: 'Natalia Caicedo',
     role: 'Head of Talent',
     company: 'Grupo Modelo / México',
-    photo: null,
+    photo: '/img/testimonios/natalia-caicedo.png',
   },
   {
     quote: 'El equipo de Laborativo cambió la forma de nuestros entrenamientos, los hicieron mucho más dinámicos y personalizados a nuestra cultura empresarial. Creamos el programa Beer Leaders para las personas con mayor potencial de crecimiento, enfocando en desarrollar sus skills de liderazgo, bienestar y diversidad e inclusión.',
@@ -61,14 +61,14 @@ const TESTIMONIOS: Testimonio[] = [
     photo: '/img/testimonios/natalia-prada.png',
   },
   {
-    quote: 'El equipo de Laborativo creó y facilitó el boot camp para el frontline de Supply, logística y ventas, con el fin de desarrollar el liderazgo, basado en los 10 capabilities a través de una experiencia vivencial. Fue una experiencia inolvidable para ellos pero especialmente para la compañía pues a través de este programa llegamos a muchísimas personas y logramos desarrollar su liderazgo.',
+    quote: 'Laborativo creó y facilitó el boot camp para el frontline de Supply, logística y ventas: una experiencia vivencial basada en los 10 capabilities. Inolvidable para ellos y para la compañía: llegamos a muchísimas personas y desarrollamos su liderazgo.',
     name: 'Ivanna Von Schoettler',
     role: 'Commercial BP Manager',
     company: 'Cervecería Nacional / Ecuador',
     photo: '/img/testimonios/ivanna-von-schoettler.png',
   },
   {
-    quote: 'La mejor forma de aprender es cuando vives una experiencia. Los retos, actividades y dinámicas de grupo que he vivido con ellos han sido la mejor forma de reflexionar para trabajar sobre las competencias de liderazgo, relacionamiento y cercanía personales y de equipo. ¡Súmenle la buena energía de todas las personas del equipo de Laborativo para tener un espacio que recarga a cualquiera!',
+    quote: 'La mejor forma de aprender es cuando vives una experiencia. Los retos y dinámicas con ellos son la mejor forma de reflexionar sobre liderazgo, relacionamiento y cercanía. ¡Súmenle su buena energía y tienes un espacio que recarga a cualquiera!',
     name: 'Nicolás Nieto',
     role: 'Sales Manager Drug & Pharma Channel',
     company: 'Alpina / Colombia',
@@ -82,7 +82,7 @@ const TESTIMONIOS: Testimonio[] = [
     photo: '/img/testimonios/sonia-quesada.png',
   },
   {
-    quote: 'Trabajar con Laborativo ha sido de las mejores experiencias que hemos tenido, en cualquier sesión que tengas con ellos muestran como les apasiona lo que hacen y logras aprender de ellos mientras disfrutas. Laborativo nos dio un train de trainers donde el equipo de HR fue capacitado para poder manejar equipos grandes y mantenerlos preparados para recibir información. Sin duda Laborativo se ha vuelto aliada fundamental para el entrenamiento de nuestros talentos.',
+    quote: 'Trabajar con Laborativo ha sido de las mejores experiencias: muestran su pasión y logras aprender mientras disfrutas. Su train de trainers dejó al equipo de HR listo para manejar grupos grandes. Se han vuelto aliada fundamental para el entrenamiento de nuestros talentos.',
     name: 'Analia Castillo',
     role: 'Talent Attraction & EVP Lead',
     company: 'Cervecería Nacional / México',
@@ -227,7 +227,7 @@ export default function LandingMobile() {
               <div style={{ fontWeight: 900, fontSize: 48, letterSpacing: '-0.04em', lineHeight: 0.95 }}>
                 {CASO_HERO.dato}
               </div>
-              <div style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 6 }}>
+              <div style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', marginTop: 6 }}>
                 {CASO_HERO.datoLabel}
               </div>
             </div>
