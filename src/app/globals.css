@@ -126,7 +126,7 @@ button { font-family: inherit; }
   flex-direction: column;
   gap: 18px;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 640px;
 }
 .testimonios-v2-photo {
   position: relative;
