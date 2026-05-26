@@ -159,7 +159,7 @@ export default function LandingMobile() {
               No queremos certificar la teoría, queremos resolver los temas comunes con experiencias extraordinarias.
             </h2>
             <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)' }}>
-              Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en 4 dimensiones.
+              Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en cuatro dimensiones.
             </p>
           </div>
         </div>

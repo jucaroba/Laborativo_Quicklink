@@ -202,7 +202,7 @@ export default function Home() {
                 con experiencias extraordinarias.
               </h2>
               <p style={{ marginTop: 20, fontSize: 16, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', maxWidth: '60ch' }}>
-                Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en 4 dimensiones.
+                Nos dedicamos a desarrollar programas / talleres de transformación cultural enmarcados en cuatro dimensiones.
               </p>
             </div>
             <span className="chip">4 dimensiones</span>
