@@ -126,6 +126,7 @@ button { font-family: inherit; }
   flex-direction: column;
   gap: 18px;
   overflow: hidden;
+  min-height: 700px;
 }
 .testimonios-v2-photo {
   position: relative;
@@ -168,6 +169,7 @@ button { font-family: inherit; }
   letter-spacing: -0.005em;
   margin: 0;
   color: var(--ink);
+  flex: 1;
 }
 .testimonios-v2-progress {
   margin-top: 20px;
