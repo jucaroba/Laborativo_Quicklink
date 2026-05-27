@@ -127,7 +127,27 @@ button { font-family: inherit; }
   gap: 18px;
   overflow: hidden;
   min-height: 640px;
+  transform: translateY(calc(var(--parallax, 0) * var(--parallax-mul, 0) * 1px));
+  will-change: transform;
 }
+.testimonios-v2-card:nth-child(1) { --parallax-mul: 3; }
+.testimonios-v2-card:nth-child(2) { --parallax-mul: 20; }
+.testimonios-v2-card:nth-child(3) { --parallax-mul: 40; }
+.testimonios-v2-card:nth-child(4) { --parallax-mul: 60; }
+.testimonios-v2-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.testimonios-v2-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  transition: background .3s ease;
+}
+.testimonios-v2-dot.is-active { background: var(--ink); }
 .testimonios-v2-photo {
   position: relative;
   width: 100%;

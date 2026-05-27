@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 export type Testimonio = {
@@ -21,21 +21,53 @@ const VISIBLE = 4
 export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 8000 }: Props) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = wrapRef.current
+    if (!el) return
+
+    let rafId: number | null = null
+
+    const update = () => {
+      const rect = el.getBoundingClientRect()
+      const vh = window.innerHeight
+      const topRel = rect.top / vh
+      // 1 cuando el top de la sección está al borde inferior del viewport (recién entrando).
+      // 0 cuando el top cruza el 60% del viewport — ahí las cartas se asientan y quedan
+      // alineadas aunque no se pueda hacer más scroll porque la página terminó.
+      const raw = (topRel - 0.6) / 0.4
+      const progress = Math.max(0, Math.min(1, raw))
+      el.style.setProperty('--parallax', String(progress))
+      rafId = null
+    }
+
+    const onScroll = () => {
+      if (rafId !== null) return
+      rafId = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   useEffect(() => {
     if (paused) return
     const t = setTimeout(() => {
-      setIndex(i => (i + 1) % testimonios.length)
+      setIndex(i => (i + VISIBLE) % testimonios.length)
     }, autoAdvanceMs)
     return () => clearTimeout(t)
   }, [paused, autoAdvanceMs, testimonios.length, index])
 
   const go = (delta: number) => {
-    setIndex(i => (i + delta + testimonios.length) % testimonios.length)
+    setIndex(i => ((i + delta * VISIBLE) % testimonios.length + testimonios.length) % testimonios.length)
   }
-
-  const counterCur = String(index + 1).padStart(2, '0')
-  const counterTot = String(testimonios.length).padStart(2, '0')
 
   const visible = Array.from({ length: VISIBLE }, (_, i) => {
     const realIndex = (index + i) % testimonios.length
@@ -44,6 +76,7 @@ export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 800
 
   return (
     <div
+      ref={wrapRef}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       className="testimonios-v2-wrap"
@@ -74,18 +107,6 @@ export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 800
         ))}
       </div>
 
-      {/* Progress bar */}
-      <div className="testimonios-v2-progress">
-        <div
-          key={`${index}-${paused}`}
-          className="testimonios-progress"
-          style={{
-            animationDuration: `${autoAdvanceMs}ms`,
-            animationPlayState: paused ? 'paused' : 'running',
-          }}
-        />
-      </div>
-
       {/* Controls */}
       <div className="testimonios-v2-controls">
         <button
@@ -99,10 +120,12 @@ export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 800
           </svg>
         </button>
 
-        <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '.06em' }}>
-          {counterCur}
-          <span style={{ color: 'var(--ink)' }}> / {counterTot}</span>
-        </span>
+        <div className="testimonios-v2-dots" aria-label="Progreso del carrusel">
+          {testimonios.map((_, i) => {
+            const isActive = i >= index && i < index + VISIBLE
+            return <span key={i} className={`testimonios-v2-dot${isActive ? ' is-active' : ''}`} />
+          })}
+        </div>
 
         <button
           type="button"
