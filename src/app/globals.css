@@ -109,8 +109,18 @@ button { font-family: inherit; }
 
 /* Testimonios — carrusel de 4 cartas */
 .testimonios-v2-wrap {
+  position: relative;
   width: 100%;
 }
+.testimonios-v2-mirror {
+  position: absolute;
+  inset: 0 0 auto 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+.testimonios-v2-mirror .testimonios-v2-track { align-items: start; }
+.testimonios-v2-mirror .testimonios-v2-card { min-height: 0; transform: none; }
 .testimonios-v2-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -126,7 +136,7 @@ button { font-family: inherit; }
   flex-direction: column;
   gap: 18px;
   overflow: hidden;
-  min-height: 640px;
+  min-height: 500px;
   transform: translateY(calc(var(--parallax, 0) * var(--parallax-mul, 0) * 1px));
   will-change: transform;
 }

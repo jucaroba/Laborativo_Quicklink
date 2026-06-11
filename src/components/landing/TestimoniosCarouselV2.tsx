@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react'
 import Image from 'next/image'
 
 export type Testimonio = {
@@ -21,7 +21,26 @@ const VISIBLE = 4
 export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 8000 }: Props) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [cardMinH, setCardMinH] = useState<number>(0)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const mirrorRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const measure = () => {
+      const mirror = mirrorRef.current
+      if (!mirror) return
+      const cards = mirror.querySelectorAll<HTMLElement>('.testimonios-v2-card')
+      let max = 0
+      cards.forEach(c => {
+        const h = c.offsetHeight
+        if (h > max) max = h
+      })
+      if (max > 0) setCardMinH(max)
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [testimonios])
 
   useEffect(() => {
     const el = wrapRef.current
@@ -81,9 +100,27 @@ export default function TestimoniosCarouselV2({ testimonios, autoAdvanceMs = 800
       onMouseLeave={() => setPaused(false)}
       className="testimonios-v2-wrap"
     >
+      {/* Mirror invisible: mide la altura natural máxima de las 8 cartas */}
+      <div className="testimonios-v2-mirror" ref={mirrorRef} aria-hidden>
+        <div className="testimonios-v2-track">
+          {testimonios.map((t, i) => (
+            <article key={`mirror-${i}`} className="testimonios-v2-card">
+              <div className="testimonios-v2-photo" />
+              <h3 className="testimonios-v2-name">{t.name}</h3>
+              <span className="chip testimonios-v2-company">{t.company}</span>
+              <blockquote className="testimonios-v2-quote">{`“${t.quote}”`}</blockquote>
+            </article>
+          ))}
+        </div>
+      </div>
+
       <div className="testimonios-v2-track">
         {visible.map(({ t, realIndex }, slot) => (
-          <article key={`${slot}-${realIndex}`} className="testimonios-v2-card">
+          <article
+            key={`${slot}-${realIndex}`}
+            className="testimonios-v2-card"
+            style={cardMinH ? ({ minHeight: cardMinH } as CSSProperties) : undefined}
+          >
             <div className="testimonios-v2-photo">
               {t.photo ? (
                 <Image

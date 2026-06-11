@@ -25,11 +25,19 @@ const DIMENSIONES_COPY = [
 
 const CASO_HERO = {
   cliente: 'Grupo Modelo / México',
-  reto: '¡Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing no era solo el reto: era la oportunidad de transformar un grupo en equipo! Y lo logramos.',
-  dato: '99%',
-  datoLabel: 'NPS score',
-  resultado: 'Alinear y conectar a los 10 líderes del equipo fue el primer paso para lograr algo mucho más grande: movilizar a toda el área hacia una misma visión.',
+  reto: 'Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing.',
+  resultado: {
+    intro: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
+    direccion: 'Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas.',
+    magnitud: 'Vinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
+  },
 }
+
+const INDICADORES = [
+  { dato: '110', datoLabel: 'personas conectadas' },
+  { dato: '99%', datoLabel: 'NPS score' },
+  { dato: '10', datoLabel: 'líderes alineados' },
+]
 
 const TESTIMONIOS: Testimonio[] = [
   {
@@ -40,7 +48,7 @@ const TESTIMONIOS: Testimonio[] = [
     photo: '/img/testimonios/natalia-caicedo.png',
   },
   {
-    quote: 'El equipo de Laborativo cambió la forma de nuestros entrenamientos, los hicieron mucho más dinámicos y personalizados a nuestra cultura empresarial. Creamos el programa Beer Leaders para las personas con mayor potencial de crecimiento, enfocando en desarrollar sus skills de liderazgo, bienestar y diversidad e inclusión.',
+    quote: 'Laborativo transformó nuestros entrenamientos, haciéndolos más dinámicos y alineados con nuestra cultura. Juntos creamos Beer Leaders, un programa para desarrollar liderazgo, bienestar y diversidad e inclusión.',
     name: 'Andrea Cruz',
     role: 'Talent Management and Learning Lead',
     company: 'Cervecería Nacional / Ecuador',
@@ -88,12 +96,6 @@ const TESTIMONIOS: Testimonio[] = [
     company: 'Cervecería Nacional / México',
     photo: '/img/testimonios/analia-castillo.png',
   },
-]
-
-const CASOS_THUMBS = [
-  { cliente: 'Cliente A', reto: 'Frase del reto de este caso.', dato: '200', datoLabel: 'líderes alineados', resultado: 'Resultado del caso explicado en una frase corta.' },
-  { cliente: 'Cliente B', reto: 'Frase del reto de este caso.', dato: '6 países', datoLabel: 'en 4 meses', resultado: 'Resultado del caso explicado en una frase corta.' },
-  { cliente: 'Cliente C', reto: 'Frase del reto de este caso.', dato: '×3', datoLabel: 'velocidad de decisión', resultado: 'Resultado del caso explicado en una frase corta.' },
 ]
 
 export default function LandingMobile() {
@@ -211,57 +213,48 @@ export default function LandingMobile() {
       <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
         <span className="tag">Casos de éxito</span>
 
-        {/* Caso destacado */}
+        {/* Caso destacado + indicadores, todo unido */}
         <div style={{ marginTop: 22, border: '1.5px solid var(--ink)', background: 'var(--card)' }}>
           {/* Video YouTube (lite embed) */}
           <div style={{ position: 'relative', aspectRatio: '16 / 9', overflow: 'hidden' }}>
             <YouTubeLite id="ovDlsGJNJps" title={`Caso: ${CASO_HERO.cliente}`} />
           </div>
-          {/* Texto */}
+
+          {/* Texto: tag + reto en negrita + descripción larga */}
           <div style={{ padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 16, borderTop: '1.5px solid var(--ink)' }}>
             <span className="tag" style={{ alignSelf: 'flex-start' }}>{CASO_HERO.cliente}</span>
-            <h3 style={{ fontWeight: 900, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.15, margin: 0 }}>
+            <h3 style={{ fontWeight: 900, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '15px 0 0' }}>
+              Reto:<br />
               {CASO_HERO.reto}
             </h3>
-            <div>
-              <div style={{ fontWeight: 900, fontSize: 48, letterSpacing: '-0.04em', lineHeight: 0.95 }}>
-                {CASO_HERO.dato}
-              </div>
-              <div style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', marginTop: 6 }}>
-                {CASO_HERO.datoLabel}
-              </div>
-            </div>
-            <p style={{ fontSize: 14, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
-              {CASO_HERO.resultado}
-            </p>
-          </div>
-        </div>
-
-        {/* 3 thumbs apilados */}
-        <div style={{ marginTop: 12, border: '1.5px solid var(--ink)', background: 'var(--card)' }}>
-          {CASOS_THUMBS.map((c, i) => (
-            <div key={i} style={{
-              padding: '22px 20px 24px',
-              borderBottom: i < CASOS_THUMBS.length - 1 ? '1.5px solid var(--ink)' : 'none',
-              display: 'flex', flexDirection: 'column', gap: 12,
-            }}>
-              <span className="tag" style={{ alignSelf: 'flex-start' }}>{c.cliente}</span>
-              <h4 style={{ fontWeight: 800, fontSize: 16, letterSpacing: '-0.01em', lineHeight: 1.25, margin: 0 }}>
-                {c.reto}
-              </h4>
-              <div>
-                <div style={{ fontWeight: 900, fontSize: 32, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
-                  {c.dato}
-                </div>
-                <div style={{ fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--mute)', marginTop: 5 }}>
-                  {c.datoLabel}
-                </div>
-              </div>
-              <p style={{ fontSize: 13, lineHeight: 1.5, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
-                {c.resultado}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+              <p style={{ margin: 0, fontWeight: 800, color: 'var(--ink)' }}>{CASO_HERO.resultado.intro}</p>
+              <p style={{ margin: 0 }}>
+                <strong style={{ fontWeight: 800, color: 'var(--ink)' }}>Dirección.</strong> {CASO_HERO.resultado.direccion}
+              </p>
+              <p style={{ margin: 0 }}>
+                <strong style={{ fontWeight: 800, color: 'var(--ink)' }}>Magnitud.</strong> {CASO_HERO.resultado.magnitud}
               </p>
             </div>
-          ))}
+          </div>
+
+          {/* 3 indicadores del mismo caso */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1.5px solid var(--ink)' }}>
+            {INDICADORES.map((ind, i) => (
+              <div key={i} style={{
+                padding: '20px 14px',
+                borderRight: i < INDICADORES.length - 1 ? '1.5px solid var(--ink)' : 'none',
+                display: 'flex', flexDirection: 'column', gap: 6,
+              }}>
+                <div style={{ fontWeight: 900, fontSize: 28, letterSpacing: '-0.03em', lineHeight: 0.95 }}>
+                  {ind.dato}
+                </div>
+                <div style={{ fontSize: 9, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.3 }}>
+                  {ind.datoLabel}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
