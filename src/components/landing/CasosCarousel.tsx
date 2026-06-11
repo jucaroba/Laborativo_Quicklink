@@ -18,6 +18,7 @@ export type Caso = {
   cliente: string
   media: CasoMedia[]
   reto: string
+  descriptionLead?: string
   description: string
   indicadores: Indicador[]
 }
@@ -69,9 +70,18 @@ export default function CasosCarousel({ casos }: Props) {
             <h3 style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.2vw, 30px)', letterSpacing: '-0.02em', lineHeight: 1.15, margin: '15px 0 0', maxWidth: '32ch' }}>
               {active.reto}
             </h3>
-            <p style={{ fontSize: 15, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
-              {active.description}
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {active.descriptionLead && (
+                <p style={{ fontSize: 15, lineHeight: 1.55, fontWeight: 800, color: 'var(--ink)', margin: 0 }}>
+                  {active.descriptionLead}
+                </p>
+              )}
+              {active.description.split('\n\n').map((p, i) => (
+                <p key={i} style={{ fontSize: 15, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+                  {p}
+                </p>
+              ))}
+            </div>
           </div>
 
           {/* Lado derecho: media (video, imagen o placeholder) */}
@@ -198,16 +208,16 @@ function IndicadorBox({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'stack') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 20, height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, height: '100%' }}>
         {indicador.items.map((item, j) => (
           <div key={j} style={{
-            paddingTop: j > 0 ? 16 : 0,
+            paddingTop: j > 0 ? 10 : 0,
             borderTop: j > 0 ? '1px solid var(--line-soft)' : 'none',
           }}>
-            <div style={{ fontWeight: 900, fontSize: 'clamp(28px, 2.6vw, 38px)', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
+            <div style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.1vw, 30px)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
               {item.value}
             </div>
-            <div style={{ fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', marginTop: 6, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', marginTop: 4, lineHeight: 1.35 }}>
               {item.label}
             </div>
           </div>
@@ -217,13 +227,13 @@ function IndicadorBox({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'list') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, height: '100%' }}>
         {indicador.items.map((item, j) => (
-          <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <div style={{ fontWeight: 900, fontSize: 15, letterSpacing: '-0.01em', color: 'var(--ink)' }}>
+          <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <div style={{ fontWeight: 900, fontSize: 13, letterSpacing: '-0.01em', color: 'var(--ink)', lineHeight: 1.2 }}>
               {item.title}
             </div>
-            <div style={{ fontSize: 12, color: 'var(--ink-2)', lineHeight: 1.45 }}>
+            <div style={{ fontSize: 11, color: 'var(--ink-2)', lineHeight: 1.35 }}>
               {item.description}
             </div>
           </div>

@@ -95,9 +95,18 @@ export default function CasosCarouselMobile({ casos }: Props) {
           <h3 style={{ fontWeight: 900, fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.2, margin: '15px 0 0' }}>
             {active.reto}
           </h3>
-          <p style={{ fontSize: 14, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
-            {active.description}
-          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {active.descriptionLead && (
+              <p style={{ fontSize: 14, lineHeight: 1.55, fontWeight: 800, color: 'var(--ink)', margin: 0 }}>
+                {active.descriptionLead}
+              </p>
+            )}
+            {active.description.split('\n\n').map((p, i) => (
+              <p key={i} style={{ fontSize: 14, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
+                {p}
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* Indicadores */}

@@ -106,7 +106,8 @@ const CASO_GRUPO_MODELO: Caso = {
     { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'Grupo Modelo — imagen 2' },
   ],
   reto: 'Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing.',
-  description: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud. Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas. Vinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
+  descriptionLead: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
+  description: 'Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas.\n\nVinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
   indicadores: [
     { kind: 'percent', value: '110', label: 'personas conectadas' },
     { kind: 'percent', value: '99%', label: 'NPS score' },
