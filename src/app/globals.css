@@ -234,6 +234,18 @@ button { font-family: inherit; }
   transition: background .15s ease, color .15s ease;
 }
 .testimonios-nav:hover { background: var(--ink); color: var(--bg); }
+.casos-media-nav {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--ink);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  transition: background .15s ease, color .15s ease;
+}
+.casos-media-nav:hover { background: var(--ink); color: var(--card); }
 .testimonios-progress {
   width: 0;
   height: 100%;

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import LandingMobile from '@/components/landing/LandingMobile'
-import YouTubeLite from '@/components/landing/YouTubeLite'
 import TestimoniosCarouselV2, { type Testimonio } from '@/components/landing/TestimoniosCarouselV2'
+import CasosCarousel, { type Caso } from '@/components/landing/CasosCarousel'
 
 const MANIFIESTO = [
   `Después de muchos años trabajando con equipos entendimos algo muy simple:
@@ -24,21 +24,97 @@ const DIMENSIONES_COPY = [
   { n: '04', idx: 'Acción',      h: 'Comportamiento', pair: '¿Qué?',            p: 'Lo que se hace realmente, no lo que se dice.\nHábitos, decisiones y entregas visibles.' },
 ]
 
-const CASO_HERO = {
-  cliente: 'Grupo Modelo / México',
-  reto: 'Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing.',
-  resultado: {
-    intro: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
-    direccion: 'Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas.',
-    magnitud: 'Vinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
-  },
+const CASO_AB_INBEV_DIV: Caso = {
+  cliente: 'AB INBEV / Colombia, México, Ecuador',
+  media: [
+    { type: 'image', src: '/img/casos/grupo-modelo/1.jpg', alt: 'AB INBEV diversidad — imagen 1' },
+    { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'AB INBEV diversidad — imagen 2' },
+  ],
+  reto: '¿Cómo un programa de diversidad, equidad e inclusión puede aumentar los indicadores de pertenencia en la organización?',
+  description: 'Desarrollamos el programa "Diversidad e inclusión al alcance de tus manos" entregando herramientas prácticas a más de 35 equipos en Alpina, Bavaria en Colombia, Grupo Modelo en México y Cervecería Nacional en Ecuador.',
+  indicadores: [
+    { kind: 'percent', value: '100%', label: 'de los participantes recomendarían este taller' },
+    { kind: 'ratio', num: '9', den: '10', label: 'afirmaron tener herramientas concretas para aplicar inmediatamente' },
+    { kind: 'percent', value: '94%', label: 'identificó acciones concretas para incluir en su día a día' },
+  ],
 }
 
-const INDICADORES = [
-  { dato: '110', datoLabel: 'personas conectadas' },
-  { dato: '99%', datoLabel: 'NPS score' },
-  { dato: '10', datoLabel: 'líderes alineados' },
-]
+const CASO_AB_INBEV_LID: Caso = {
+  cliente: 'AB INBEV / Perú, México',
+  media: [
+    { type: 'image', src: '/img/casos/caso-2/1.png', alt: 'AB INBEV liderazgo — imagen 1' },
+    { type: 'image', src: '/img/casos/caso-2/2.png', alt: 'AB INBEV liderazgo — imagen 2' },
+    { type: 'image', src: '/img/casos/caso-2/3.png', alt: 'AB INBEV liderazgo — imagen 3' },
+    { type: 'image', src: '/img/casos/caso-2/4.png', alt: 'AB INBEV liderazgo — imagen 4' },
+  ],
+  reto: '¿Cómo lideramos con humanidad sin perder de vista los resultados? Ese fue el reto que varias organizaciones nos invitaron a resolver a través del liderazgo.',
+  description: 'Creamos 3 programas de liderazgo: Beer Leader, Lidera + y Mi otro yo, que a través de las experiencias y la práctica dieron herramientas para liderar mejor.',
+  indicadores: [
+    {
+      kind: 'stack',
+      items: [
+        { value: '+500', label: 'personas en los programas' },
+        { value: '+5.000', label: 'beneficiados por un mejor liderazgo' },
+      ],
+    },
+    {
+      kind: 'list',
+      items: [
+        { title: 'Beer Leader', description: 'Programa para top talent.' },
+        { title: 'Lidera +', description: 'Programa para empezar a liderar.' },
+        { title: 'Mi otro yo', description: 'Programa para…' },
+      ],
+    },
+    { kind: 'percent', value: '87%', label: 'cambió al menos un comportamiento en las 4 semanas posteriores' },
+  ],
+}
+
+const CASO_PRIMAX: Caso = {
+  cliente: 'Primax / Colombia',
+  media: [
+    { type: 'image', src: '/img/casos/caso-3/1.png', alt: 'Primax — imagen 1' },
+    { type: 'image', src: '/img/casos/caso-3/2.png', alt: 'Primax — imagen 2' },
+    { type: 'image', src: '/img/casos/caso-3/3.png', alt: 'Primax — imagen 3' },
+    { type: 'image', src: '/img/casos/caso-3/4.png', alt: 'Primax — imagen 4' },
+  ],
+  reto: 'Llevar la cultura más allá de las oficinas centrales y hacer que cada persona, en cada estación y territorio, pudiera reconocerla, vivirla y hacerla suya.',
+  description: 'Diseñar Cultura sin Fronteras: un viaje para conectar personas, comportamientos y propósito, haciendo que la esencia de Primax se viviera con la misma fuerza en todos los territorios.',
+  indicadores: [
+    { kind: 'percent', value: '100%', label: 'del territorio cubierto — 7 plantas a nivel nacional' },
+    { kind: 'percent', value: '99%', label: 'manifestó sentirse más conectado con la esencia de Primax' },
+    { kind: 'percent', value: '77%', label: 'salió con un compromiso concreto y lo implementó' },
+  ],
+}
+
+const CASO_BANCO_FALABELLA: Caso = {
+  cliente: 'Banco Falabella / Colombia',
+  media: [],
+  reto: 'Creían que los mayores desafíos eran de procesos, herramientas o coordinación.',
+  description: 'El problema no era Excel. Descubrimos que el verdadero reto era otro: conocerse, confiar y conectar con las personas detrás de cada cargo.',
+  indicadores: [
+    { kind: 'percent', value: '99%', label: 'expresó sentirse más cómodo pidiendo ayuda a otros miembros del equipo' },
+    { kind: 'percent', value: '100%', label: 'descubrió algo significativo sobre un compañero que no conocía' },
+    { kind: 'ratio', num: '8', den: '10', label: 'se comprometieron con un comportamiento para fortalecer la relación con sus compañeros' },
+  ],
+}
+
+const CASO_GRUPO_MODELO: Caso = {
+  cliente: 'Grupo Modelo / México',
+  media: [
+    { type: 'video', videoId: 'ovDlsGJNJps' },
+    { type: 'image', src: '/img/casos/grupo-modelo/1.jpg', alt: 'Grupo Modelo — imagen 1' },
+    { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'Grupo Modelo — imagen 2' },
+  ],
+  reto: 'Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing.',
+  description: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud. Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas. Vinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
+  indicadores: [
+    { kind: 'percent', value: '110', label: 'personas conectadas' },
+    { kind: 'percent', value: '99%', label: 'NPS score' },
+    { kind: 'percent', value: '10', label: 'líderes alineados' },
+  ],
+}
+
+const CASOS: Caso[] = [CASO_AB_INBEV_DIV, CASO_AB_INBEV_LID, CASO_PRIMAX, CASO_BANCO_FALABELLA, CASO_GRUPO_MODELO]
 
 const TESTIMONIOS: Testimonio[] = [
   {
@@ -250,64 +326,7 @@ export default function Home() {
         {/* Casos de éxito */}
         <section style={{ padding: '80px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
           <span className="tag">Casos de éxito</span>
-
-          {/* Caso destacado: texto + video arriba, indicadores abajo — todo unido */}
-          <div style={{
-            marginTop: 32,
-            border: '1.5px solid var(--ink)',
-            background: 'var(--card)',
-          }}>
-            {/* Parte superior: texto + video */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1.3fr',
-              borderBottom: '1.5px solid var(--ink)',
-            }}>
-              {/* Lado izquierdo: texto */}
-              <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: 22, borderRight: '1.5px solid var(--ink)' }}>
-                <span className="tag" style={{ alignSelf: 'flex-start' }}>{CASO_HERO.cliente}</span>
-                <h3 style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.2vw, 30px)', letterSpacing: '-0.02em', lineHeight: 1.15, margin: '15px 0 0', maxWidth: '28ch' }}>
-                  Reto:<br />
-                  {CASO_HERO.reto}
-                </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, fontSize: 15, lineHeight: 1.55, fontWeight: 500, color: 'var(--ink-2)', margin: 0 }}>
-                  <p style={{ margin: 0, fontWeight: 800, color: 'var(--ink)' }}>{CASO_HERO.resultado.intro}</p>
-                  <p style={{ margin: 0 }}>
-                    <strong style={{ fontWeight: 800, color: 'var(--ink)' }}>Dirección.</strong> {CASO_HERO.resultado.direccion}
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    <strong style={{ fontWeight: 800, color: 'var(--ink)' }}>Magnitud.</strong> {CASO_HERO.resultado.magnitud}
-                  </p>
-                </div>
-              </div>
-
-              {/* Lado derecho: video YouTube (lite embed) */}
-              <div style={{ position: 'relative', aspectRatio: '16 / 9', overflow: 'hidden' }}>
-                <YouTubeLite id="ovDlsGJNJps" title={`Caso: ${CASO_HERO.cliente}`} />
-              </div>
-            </div>
-
-            {/* Parte inferior: 3 indicadores del mismo caso */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-            }}>
-              {INDICADORES.map((ind, i) => (
-                <div key={i} style={{
-                  padding: '32px 36px 36px',
-                  borderRight: i < INDICADORES.length - 1 ? '1.5px solid var(--ink)' : 'none',
-                  display: 'flex', flexDirection: 'column', gap: 10,
-                }}>
-                  <div style={{ fontWeight: 900, fontSize: 'clamp(40px, 4vw, 60px)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
-                    {ind.dato}
-                  </div>
-                  <div style={{ fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)' }}>
-                    {ind.datoLabel}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <CasosCarousel casos={CASOS} />
         </section>
 
         {/* Testimonios */}
