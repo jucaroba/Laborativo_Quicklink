@@ -33,9 +33,9 @@ const CASO_AB_INBEV_DIV: Caso = {
   reto: '¿Cómo un programa de diversidad, equidad e inclusión puede aumentar los indicadores de pertenencia en la organización?',
   description: 'Desarrollamos el programa "Diversidad e inclusión al alcance de tus manos" entregando herramientas prácticas a más de 35 equipos en Alpina, Bavaria en Colombia, Grupo Modelo en México y Cervecería Nacional en Ecuador.',
   indicadores: [
-    { kind: 'percent', value: '100%', label: 'de los participantes recomendarían este taller' },
-    { kind: 'ratio', num: '9', den: '10', label: 'afirmaron tener herramientas concretas para aplicar inmediatamente' },
-    { kind: 'percent', value: '94%', label: 'identificó acciones concretas para incluir en su día a día' },
+    { kind: 'percent', value: '100%', label: 'De los participantes recomendarían este taller' },
+    { kind: 'ratio', num: '9', den: '10', label: 'Afirmaron tener herramientas concretas para aplicar inmediatamente' },
+    { kind: 'percent', value: '94%', label: 'Identificó acciones concretas para incluir en su día a día' },
   ],
 }
 
@@ -53,8 +53,8 @@ const CASO_AB_INBEV_LID: Caso = {
     {
       kind: 'stack',
       items: [
-        { value: '+500', label: 'personas en los programas' },
-        { value: '+5.000', label: 'beneficiados por un mejor liderazgo' },
+        { value: '+500', label: 'Personas en los programas' },
+        { value: '+5.000', label: 'Beneficiados por un mejor liderazgo' },
       ],
     },
     {
@@ -65,7 +65,7 @@ const CASO_AB_INBEV_LID: Caso = {
         { title: 'Mi otro yo', description: 'Programa para…' },
       ],
     },
-    { kind: 'percent', value: '87%', label: 'cambió al menos un comportamiento en las 4 semanas posteriores' },
+    { kind: 'percent', value: '87%', label: 'Cambió al menos un comportamiento en las 4 semanas posteriores' },
   ],
 }
 
@@ -80,9 +80,9 @@ const CASO_PRIMAX: Caso = {
   reto: 'Llevar la cultura más allá de las oficinas centrales y hacer que cada persona, en cada estación y territorio, pudiera reconocerla, vivirla y hacerla suya.',
   description: 'Diseñar Cultura sin Fronteras: un viaje para conectar personas, comportamientos y propósito, haciendo que la esencia de Primax se viviera con la misma fuerza en todos los territorios.',
   indicadores: [
-    { kind: 'percent', value: '100%', label: 'del territorio cubierto — 7 plantas a nivel nacional' },
-    { kind: 'percent', value: '99%', label: 'manifestó sentirse más conectado con la esencia de Primax' },
-    { kind: 'percent', value: '77%', label: 'salió con un compromiso concreto y lo implementó' },
+    { kind: 'percent', value: '100%', label: 'Del territorio cubierto — 7 plantas a nivel nacional' },
+    { kind: 'percent', value: '99%', label: 'Manifestó sentirse más conectado con la esencia de Primax' },
+    { kind: 'percent', value: '77%', label: 'Salió con un compromiso concreto y lo implementó' },
   ],
 }
 
@@ -92,9 +92,9 @@ const CASO_BANCO_FALABELLA: Caso = {
   reto: 'Creían que los mayores desafíos eran de procesos, herramientas o coordinación.',
   description: 'El problema no era Excel. Descubrimos que el verdadero reto era otro: conocerse, confiar y conectar con las personas detrás de cada cargo.',
   indicadores: [
-    { kind: 'percent', value: '99%', label: 'expresó sentirse más cómodo pidiendo ayuda a otros miembros del equipo' },
-    { kind: 'percent', value: '100%', label: 'descubrió algo significativo sobre un compañero que no conocía' },
-    { kind: 'ratio', num: '8', den: '10', label: 'se comprometieron con un comportamiento para fortalecer la relación con sus compañeros' },
+    { kind: 'percent', value: '99%', label: 'Expresó sentirse más cómodo pidiendo ayuda a otros miembros del equipo' },
+    { kind: 'percent', value: '100%', label: 'Descubrió algo significativo sobre un compañero que no conocía' },
+    { kind: 'ratio', num: '8', den: '10', label: 'Se comprometieron con un comportamiento para fortalecer la relación con sus compañeros' },
   ],
 }
 
@@ -109,13 +109,13 @@ const CASO_GRUPO_MODELO: Caso = {
   descriptionLead: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
   description: 'Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas.\n\nVinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
   indicadores: [
-    { kind: 'percent', value: '110', label: 'personas conectadas' },
+    { kind: 'percent', value: '110', label: 'Personas conectadas' },
     { kind: 'percent', value: '99%', label: 'NPS score' },
-    { kind: 'percent', value: '10', label: 'líderes alineados' },
+    { kind: 'percent', value: '10', label: 'Líderes alineados' },
   ],
 }
 
-const CASOS: Caso[] = [CASO_AB_INBEV_DIV, CASO_AB_INBEV_LID, CASO_PRIMAX, CASO_BANCO_FALABELLA, CASO_GRUPO_MODELO]
+const CASOS: Caso[] = [CASO_GRUPO_MODELO, CASO_AB_INBEV_DIV, CASO_AB_INBEV_LID, CASO_PRIMAX, CASO_BANCO_FALABELLA]
 
 const TESTIMONIOS: Testimonio[] = [
   {

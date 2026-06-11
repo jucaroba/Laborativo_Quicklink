@@ -117,7 +117,7 @@ export default function CasosCarouselMobile({ casos }: Props) {
               borderRight: i < active.indicadores.length - 1 ? '1.5px solid var(--ink)' : 'none',
               display: 'flex',
               flexDirection: 'column',
-              minHeight: 140,
+              height: 119,
             }}>
               <IndicadorBoxMobile indicador={ind} />
             </div>
@@ -155,7 +155,7 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
         <div style={{ fontWeight: 900, fontSize: 30, letterSpacing: '-0.04em', lineHeight: 0.9 }}>
           {indicador.value}
         </div>
-        <div style={{ fontSize: 9, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.4 }}>
+        <div style={{ fontSize: 9, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4 }}>
           {indicador.label}
         </div>
       </div>
@@ -168,7 +168,7 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
           <span style={{ fontSize: 30 }}>{indicador.num}</span>
           <span style={{ fontSize: 15, color: 'var(--mute)', fontWeight: 700 }}>/ {indicador.den}</span>
         </div>
-        <div style={{ fontSize: 9, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.4 }}>
+        <div style={{ fontSize: 9, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4 }}>
           {indicador.label}
         </div>
       </div>
@@ -185,7 +185,7 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
             <div style={{ fontWeight: 900, fontSize: 18, letterSpacing: '-0.04em', lineHeight: 0.9 }}>
               {item.value}
             </div>
-            <div style={{ fontSize: 8, letterSpacing: '.06em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--ink)', marginTop: 3, lineHeight: 1.4 }}>
+            <div style={{ fontSize: 8, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', marginTop: 3, lineHeight: 1.4 }}>
               {item.label}
             </div>
           </div>
