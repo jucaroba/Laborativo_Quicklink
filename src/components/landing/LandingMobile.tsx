@@ -2,6 +2,7 @@ import Image from 'next/image'
 import TestimoniosCarouselV2, { type Testimonio } from '@/components/landing/TestimoniosCarouselV2'
 import CasosCarouselMobile from '@/components/landing/CasosCarouselMobile'
 import { type Caso } from '@/components/landing/CasosCarousel'
+import ContactoMobile from '@/components/landing/ContactoMobile'
 
 const MANIFIESTO = [
   `Después de muchos años trabajando con equipos entendimos algo muy simple:
@@ -300,6 +301,9 @@ export default function LandingMobile() {
         </div>
         <TestimoniosCarouselV2 testimonios={TESTIMONIOS} />
       </section>
+
+      {/* Contacto */}
+      <ContactoMobile />
 
       {/* Footer */}
       <footer style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: 6, fontSize: 9, color: 'var(--mute)', letterSpacing: '.08em', textTransform: 'uppercase', fontWeight: 600 }}>

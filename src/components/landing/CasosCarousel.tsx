@@ -145,11 +145,11 @@ export default function CasosCarousel({ casos }: Props) {
         }}>
           {active.indicadores.map((ind, i) => (
             <div key={i} style={{
-              padding: '32px 36px 36px',
+              padding: '22px 36px',
               borderRight: i < active.indicadores.length - 1 ? '1.5px solid var(--ink)' : 'none',
               display: 'flex',
               flexDirection: 'column',
-              height: 170,
+              height: 115,
             }}>
               <IndicadorBox indicador={ind} />
             </div>
@@ -183,11 +183,11 @@ export default function CasosCarousel({ casos }: Props) {
 function IndicadorBox({ indicador }: { indicador: Indicador }) {
   if (indicador.kind === 'percent') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', gap: 16 }}>
-        <div style={{ fontWeight: 900, fontSize: 'clamp(48px, 4.4vw, 68px)', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
+      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 16 }}>
+        <div style={{ fontWeight: 900, fontSize: 'clamp(48px, 4.4vw, 68px)', letterSpacing: '-0.04em', lineHeight: 0.9, flexShrink: 0 }}>
           {indicador.value}
         </div>
-        <div style={{ fontSize: 12, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4 }}>
+        <div style={{ fontSize: 13, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
           {indicador.label}
         </div>
       </div>
@@ -195,12 +195,12 @@ function IndicadorBox({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'ratio') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%', gap: 16 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.04em' }}>
+      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 16 }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 0, fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink)', flexShrink: 0 }}>
           <span style={{ fontSize: 'clamp(48px, 4.4vw, 68px)' }}>{indicador.num}</span>
-          <span style={{ fontSize: 'clamp(22px, 2vw, 32px)', color: 'var(--mute)', fontWeight: 700 }}>/ {indicador.den}</span>
+          <span style={{ fontSize: 'clamp(48px, 4.4vw, 68px)' }}>/{indicador.den}</span>
         </div>
-        <div style={{ fontSize: 12, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4 }}>
+        <div style={{ fontSize: 13, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
           {indicador.label}
         </div>
       </div>
@@ -208,16 +208,17 @@ function IndicadorBox({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'stack') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, justifyContent: 'center', height: '100%' }}>
         {indicador.items.map((item, j) => (
           <div key={j} style={{
-            paddingTop: j > 0 ? 10 : 0,
+            display: 'flex', alignItems: 'baseline', gap: 10,
+            paddingTop: j > 0 ? 8 : 0,
             borderTop: j > 0 ? '1px solid var(--line-soft)' : 'none',
           }}>
-            <div style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.1vw, 30px)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
+            <div style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.1vw, 30px)', letterSpacing: '-0.04em', lineHeight: 0.95, flexShrink: 0 }}>
               {item.value}
             </div>
-            <div style={{ fontSize: 10, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', marginTop: 4, lineHeight: 1.35 }}>
+            <div style={{ fontSize: 13, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
               {item.label}
             </div>
           </div>
@@ -227,15 +228,11 @@ function IndicadorBox({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'list') {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6, justifyContent: 'center', height: '100%' }}>
         {indicador.items.map((item, j) => (
-          <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-            <div style={{ fontWeight: 900, fontSize: 13, letterSpacing: '-0.01em', color: 'var(--ink)', lineHeight: 1.2 }}>
-              {item.title}
-            </div>
-            <div style={{ fontSize: 11, color: 'var(--ink-2)', lineHeight: 1.35 }}>
-              {item.description}
-            </div>
+          <div key={j} style={{ display: 'flex', alignItems: 'baseline', gap: 8, fontSize: 13, lineHeight: 1.4 }}>
+            <span style={{ fontWeight: 900, color: 'var(--ink)', flexShrink: 0 }}>{item.title}</span>
+            <span style={{ color: 'var(--ink-2)', fontWeight: 500 }}>{item.description}</span>
           </div>
         ))}
       </div>
