@@ -138,17 +138,16 @@ export default function Contacto() {
                     <path d="M1 7H19M19 7L13 1M19 7L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
                   </svg>
                 </button>
+              </form>
+              {/* Slot reservado para el mensaje de éxito/error: siempre ocupa el mismo alto para no mover el form */}
+              <div style={{ minHeight: 20, marginTop: 10, fontSize: 13, lineHeight: 1.4 }}>
                 {estado === 'ok' && (
-                  <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 13, color: 'var(--ink-2)' }}>
-                    ¡Gracias! Te respondemos pronto.
-                  </p>
+                  <span style={{ color: 'var(--ink-2)' }}>¡Gracias! Te respondemos pronto.</span>
                 )}
                 {estado === 'error' && (
-                  <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 13, color: 'var(--destructive)' }}>
-                    {mensajeError}
-                  </p>
+                  <span style={{ color: 'var(--destructive)' }}>{mensajeError}</span>
                 )}
-              </form>
+              </div>
             </div>
 
             {/* Sub-columna derecha: info */}
