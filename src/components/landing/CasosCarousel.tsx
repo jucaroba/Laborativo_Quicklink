@@ -65,7 +65,7 @@ export default function CasosCarousel({ casos }: Props) {
           borderBottom: '1.5px solid var(--ink)',
         }}>
           {/* Lado izquierdo: texto */}
-          <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', gap: 22, borderRight: '1.5px solid var(--ink)' }}>
+          <div style={{ padding: '40px 36px 16px', display: 'flex', flexDirection: 'column', gap: 18, borderRight: '1.5px solid var(--ink)' }}>
             <span className="tag" style={{ alignSelf: 'flex-start' }}>{active.cliente}</span>
             <h3 style={{ fontWeight: 900, fontSize: 'clamp(22px, 2.2vw, 30px)', letterSpacing: '-0.02em', lineHeight: 1.15, margin: '15px 0 0', maxWidth: '32ch' }}>
               {active.reto}
