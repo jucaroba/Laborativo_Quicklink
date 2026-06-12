@@ -25,80 +25,6 @@ const DIMENSIONES_COPY = [
   { n: '04', idx: 'Acción',      h: 'Comportamiento', pair: '¿Qué?',            p: 'Lo que se hace realmente, no lo que se dice.\nHábitos, decisiones y entregas visibles.' },
 ]
 
-const CASO_AB_INBEV_DIV: Caso = {
-  cliente: 'AB INBEV / Colombia, México, Ecuador',
-  media: [
-    { type: 'image', src: '/img/casos/grupo-modelo/1.jpg', alt: 'AB INBEV diversidad — imagen 1' },
-    { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'AB INBEV diversidad — imagen 2' },
-  ],
-  reto: '¿Cómo un programa de diversidad, equidad e inclusión puede aumentar los indicadores de pertenencia en la organización?',
-  description: 'Desarrollamos el programa "Diversidad e inclusión al alcance de tus manos" entregando herramientas prácticas a más de 35 equipos en Alpina, Bavaria en Colombia, Grupo Modelo en México y Cervecería Nacional en Ecuador.',
-  indicadores: [
-    { kind: 'percent', value: '100%', label: 'De los participantes recomendarían este taller' },
-    { kind: 'ratio', num: '9', den: '10', label: 'Afirmaron tener herramientas concretas para aplicar inmediatamente' },
-    { kind: 'percent', value: '94%', label: 'Identificó acciones concretas para incluir en su día a día' },
-  ],
-}
-
-const CASO_AB_INBEV_LID: Caso = {
-  cliente: 'AB INBEV / Perú, México',
-  media: [
-    { type: 'image', src: '/img/casos/caso-2/1.png', alt: 'AB INBEV liderazgo — imagen 1' },
-    { type: 'image', src: '/img/casos/caso-2/2.png', alt: 'AB INBEV liderazgo — imagen 2' },
-    { type: 'image', src: '/img/casos/caso-2/3.png', alt: 'AB INBEV liderazgo — imagen 3' },
-    { type: 'image', src: '/img/casos/caso-2/4.png', alt: 'AB INBEV liderazgo — imagen 4' },
-  ],
-  reto: '¿Cómo lideramos con humanidad sin perder de vista los resultados? Ese fue el reto que varias organizaciones nos invitaron a resolver a través del liderazgo.',
-  description: 'Creamos 3 programas de liderazgo: Beer Leader, Lidera + y Mi otro yo, que a través de las experiencias y la práctica dieron herramientas para liderar mejor.',
-  indicadores: [
-    {
-      kind: 'stack',
-      items: [
-        { value: '+500', label: 'Personas en los programas' },
-        { value: '+5.000', label: 'Beneficiados por un mejor liderazgo' },
-      ],
-    },
-    {
-      kind: 'list',
-      items: [
-        { title: 'Beer Leader', description: 'Programa para top talent.' },
-        { title: 'Lidera +', description: 'Programa para empezar a liderar.' },
-        { title: 'Mi otro yo', description: 'Programa para…' },
-      ],
-    },
-    { kind: 'percent', value: '87%', label: 'Cambió al menos un comportamiento en las 4 semanas posteriores' },
-  ],
-}
-
-const CASO_PRIMAX: Caso = {
-  cliente: 'Primax / Colombia',
-  media: [
-    { type: 'image', src: '/img/casos/caso-3/1.png', alt: 'Primax — imagen 1' },
-    { type: 'image', src: '/img/casos/caso-3/2.png', alt: 'Primax — imagen 2' },
-    { type: 'image', src: '/img/casos/caso-3/3.png', alt: 'Primax — imagen 3' },
-    { type: 'image', src: '/img/casos/caso-3/4.png', alt: 'Primax — imagen 4' },
-  ],
-  reto: 'Llevar la cultura más allá de las oficinas centrales y hacer que cada persona, en cada estación y territorio, pudiera reconocerla, vivirla y hacerla suya.',
-  description: 'Diseñar Cultura sin Fronteras: un viaje para conectar personas, comportamientos y propósito, haciendo que la esencia de Primax se viviera con la misma fuerza en todos los territorios.',
-  indicadores: [
-    { kind: 'percent', value: '100%', label: 'Del territorio cubierto — 7 plantas a nivel nacional' },
-    { kind: 'percent', value: '99%', label: 'Manifestó sentirse más conectado con la esencia de Primax' },
-    { kind: 'percent', value: '77%', label: 'Salió con un compromiso concreto y lo implementó' },
-  ],
-}
-
-const CASO_BANCO_FALABELLA: Caso = {
-  cliente: 'Banco Falabella / Colombia',
-  media: [],
-  reto: 'Creían que los mayores desafíos eran de procesos, herramientas o coordinación.',
-  description: 'El problema no era Excel. Descubrimos que el verdadero reto era otro: conocerse, confiar y conectar con las personas detrás de cada cargo.',
-  indicadores: [
-    { kind: 'percent', value: '99%', label: 'Expresó sentirse más cómodo pidiendo ayuda a otros miembros del equipo' },
-    { kind: 'percent', value: '100%', label: 'Descubrió algo significativo sobre un compañero que no conocía' },
-    { kind: 'ratio', num: '8', den: '10', label: 'Se comprometieron con un comportamiento para fortalecer la relación con sus compañeros' },
-  ],
-}
-
 const CASO_GRUPO_MODELO: Caso = {
   cliente: 'Grupo Modelo / México',
   media: [
@@ -106,17 +32,89 @@ const CASO_GRUPO_MODELO: Caso = {
     { type: 'image', src: '/img/casos/grupo-modelo/1.jpg', alt: 'Grupo Modelo — imagen 1' },
     { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'Grupo Modelo — imagen 2' },
   ],
-  reto: 'Conectar, inspirar y alinear a 110 personas del nuevo equipo Marketing.',
+  reto: '¿Cómo conectar, inspirar y alinear a 110 personas en un nuevo equipo?',
   descriptionLead: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
   description: 'Con los 10 líderes del equipo definimos los tres comportamientos clave para desarrollar el potencial de las personas.\n\nVinculamos a las 90 personas del nuevo equipo para entender que la intención y el esfuerzo de cada uno fortalece el logro colectivo.',
   indicadores: [
-    { kind: 'percent', value: '110', label: 'Personas conectadas' },
-    { kind: 'percent', value: '99%', label: 'NPS score' },
-    { kind: 'percent', value: '10', label: 'Líderes alineados' },
+    { kind: 'percent', value: '99%', label: 'de NPS (Índice Neto de Promotores).' },
+    { kind: 'percent', value: '92%', label: 'de los participantes manifestó sentirse más inspirado y comprometido para aportar al éxito del nuevo equipo.' },
+    { kind: 'percent', value: '24', label: 'veleros y 110 tripulantes dieron dirección y magnitud para completar la regata en el tiempo propuesto.' },
   ],
 }
 
-const CASOS: Caso[] = [CASO_GRUPO_MODELO, CASO_AB_INBEV_DIV, CASO_AB_INBEV_LID, CASO_PRIMAX, CASO_BANCO_FALABELLA]
+const CASO_AB_INBEV_DIV: Caso = {
+  cliente: 'AB INBEV - Alpina / Colombia, México, Ecuador',
+  media: [],
+  reto: '¿Cómo un programa de diversidad e inclusión aumenta los indicadores de pertenencia en la organización?',
+  descriptionLead: 'Diversidad e inclusión al alcance de tus manos fue el concepto con el que de manera experiencial y emotiva entregamos herramientas prácticas a más de 35 equipos en Alpina, Bavaria, Grupo Modelo y Cervecería Nacional.',
+  description: 'La mano, símbolo universal de cercanía y conexión, nos permite explorar cinco conceptos fundamentales de la diversidad y la inclusión de forma simple, cercana y práctica.',
+  indicadores: [
+    { kind: 'percent', value: '100%', label: 'de los participantes recomendarían este taller.' },
+    { kind: 'ratio', num: '9', den: '10', label: 'participantes afirmaron tener herramientas concretas para aplicar inmediatamente.' },
+    { kind: 'percent', value: '94%', label: 'de los participantes afirmó que una semana después percibía un mejor ambiente en su lugar de trabajo.' },
+  ],
+}
+
+const CASO_AB_INBEV_LID: Caso = {
+  cliente: 'AB INBEV / Perú, Ecuador',
+  media: [],
+  reto: '¿Cómo lideramos con humanidad sin perder de vista los resultados?',
+  descriptionLead: 'Ese fue el reto que varias organizaciones nos invitaron a resolver a través del liderazgo.',
+  description: 'Diseñamos tres experiencias para acompañar el liderazgo en cada etapa: Beer Leader para el talento de alto potencial, Lidera+ para quienes comenzaban a liderar y Mi Otro Yo, un programa de mentoría que conectó la experiencia con el potencial. Cada iniciativa se adaptó a las necesidades de sus participantes a través de formatos presenciales e híbridos.',
+  indicadores: [
+    { kind: 'percent', value: '+500', label: 'personas hicieron parte de los programas.' },
+    { kind: 'percent', value: '+5.000', label: 'personas se beneficiaron de un mejor liderazgo.' },
+    { kind: 'percent', value: '87%', label: 'de los participantes incorporó al menos un nuevo comportamiento durante las cuatro semanas posteriores al programa.' },
+  ],
+}
+
+const CASO_PRIMAX: Caso = {
+  cliente: 'Primax / Colombia',
+  media: [],
+  reto: '¿Cómo llevar la cultura de la oficina central a los territorios lejanos?',
+  descriptionLead: 'La solución, diseñar "Cultura sin Fronteras": talleres para conectar personas, comportamientos y propósito, haciendo que la esencia de Primax se viviera con la misma fuerza en todos los territorios.',
+  description: 'Apalancados en los valores de Primax, diseñamos talleres experienciales de dos horas para transformar los valores de palabras escritas en comportamientos vividos, permitiendo que cada persona los experimentara, los hiciera propios y los llevara a su día a día.',
+  indicadores: [
+    { kind: 'percent', value: '100%', label: 'de cobertura del territorio, equivalente a 7 plantas a nivel nacional.' },
+    { kind: 'percent', value: '99%', label: 'de las personas manifestó sentirse más conectado con la esencia de Primax después de la experiencia.' },
+    { kind: 'percent', value: '82%', label: 'de los participantes salió con un compromiso y lo implementó.' },
+  ],
+}
+
+const CASO_BANCO_FALABELLA: Caso = {
+  cliente: 'Banco Falabella / Colombia',
+  media: [],
+  reto: 'Creímos que los mayores desafíos estaban en los procesos. ¡Estábamos equivocados!',
+  descriptionLead: 'Descubrimos que el verdadero reto era conocerse, confiar y conectar con las personas detrás de cada cargo.',
+  description: 'Para responder a este desafío, creamos "El problema no era Excel", una serie de talleres que invitaban a mirar más allá de los procesos para descubrir a la persona detrás del cargo, construyendo cercanía genuina, fortaleciendo la confianza y demostrando que los resultados nacen de mejores relaciones.',
+  indicadores: [
+    { kind: 'percent', value: '99%', label: 'de las personas que participaron expresaron sentirse más cómodos pidiendo ayuda o apoyo al equipo.' },
+    { kind: 'percent', value: '100%', label: 'de las personas descubrieron algo sobre un compañero que no conocían antes de la experiencia.' },
+    { kind: 'ratio', num: '8', den: '10', label: 'participantes se comprometieron con un comportamiento para fortalecer la relación con sus compañeros.' },
+  ],
+}
+
+const CASO_GRUPO_ALPINA: Caso = {
+  cliente: 'Grupo Alpina / Colombia',
+  media: [],
+  reto: 'Una holding nace cuando las empresas descubren cómo generar sinergias para multiplicar su impacto.',
+  descriptionLead: 'Antes de generar sinergias corporativas, las personas debían conocerse entre sí y comprender el aporte de cada empresa al grupo.',
+  description: 'Para lograrlo, diseñamos un recorrido experiencial donde líderes de Alpina Colombia, Ecuador, Venezuela y Estados Unidos, junto con representantes de Don Maíz, Clover, Alpes, Fundación Alpina y Celan, dejaron de verse como empresas independientes para descubrirse como personas y grupo.',
+  indicadores: [
+    { kind: 'percent', value: '100%', label: 'de los participantes afirmó haber fortalecido su relación con líderes de otras empresas del grupo.' },
+    { kind: 'percent', value: '93%', label: 'de los asistentes manifestaron tener una mayor claridad sobre el propósito y aporte de cada empresa.' },
+    { kind: 'percent', value: '75%', label: 'de las personas identificó oportunidades concretas de colaboración entre empresas para generar un mayor impacto.' },
+  ],
+}
+
+const CASOS: Caso[] = [
+  CASO_GRUPO_MODELO,
+  CASO_AB_INBEV_DIV,
+  CASO_AB_INBEV_LID,
+  CASO_PRIMAX,
+  CASO_BANCO_FALABELLA,
+  CASO_GRUPO_ALPINA,
+]
 
 const TESTIMONIOS: Testimonio[] = [
   {
