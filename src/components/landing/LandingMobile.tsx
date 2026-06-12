@@ -14,8 +14,7 @@ Pero transforma todo.`,
 Y si no hay conciencia…
 nada cambia.`,
   `En Laborativo aprendimos a trabajar con ella.
-Diseñamos experiencias donde la emoción no sea un accidente…
-sino una herramienta.`,
+Diseñamos experiencias donde la emoción sea una herramienta y no un accidente.`,
 ]
 
 const DIMENSIONES_COPY = [

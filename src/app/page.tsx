@@ -14,8 +14,7 @@ Pero transforma todo.`,
 Y si no hay conciencia…
 nada cambia.`,
   `En Laborativo aprendimos a trabajar con ella.
-Diseñamos experiencias donde la emoción no sea un accidente…
-sino una herramienta.`,
+Diseñamos experiencias donde la emoción sea una herramienta y no un accidente.`,
 ]
 
 const DIMENSIONES_COPY = [
@@ -288,7 +287,7 @@ export default function Home() {
                 lineHeight: 0.88,
                 letterSpacing: '-0.025em',
                 paddingBottom: '0.08em',
-                margin: 0,
+                margin: '5px 0 0',
                 color: '#fff',
               }}>
                 consultoría<br />
@@ -298,7 +297,7 @@ export default function Home() {
               </h1>
 
               {/* Columna derecha: Manifiesto a 16px */}
-              <div style={{ maxWidth: '55%' }}>
+              <div style={{ maxWidth: 'calc(55% - 20px)', marginTop: -5 }}>
                 <span className="tag" style={{ background: '#fff', color: 'var(--ink)' }}>Manifiesto</span>
                 <div style={{ marginTop: 28 }}>
                   {MANIFIESTO.map((parrafo, i) => (
