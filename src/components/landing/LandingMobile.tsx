@@ -29,8 +29,13 @@ const CASO_GRUPO_MODELO: Caso = {
   cliente: 'Grupo Modelo / México',
   media: [
     { type: 'video', videoId: 'ovDlsGJNJps' },
-    { type: 'image', src: '/img/casos/grupo-modelo/1.jpg', alt: 'Grupo Modelo — imagen 1' },
-    { type: 'image', src: '/img/casos/grupo-modelo/2.png', alt: 'Grupo Modelo — imagen 2' },
+    { type: 'image', src: '/img/casos/grupo-modelo/1.jpeg', alt: 'Grupo Modelo — imagen 1' },
+    { type: 'image', src: '/img/casos/grupo-modelo/2.jpeg', alt: 'Grupo Modelo — imagen 2' },
+    { type: 'image', src: '/img/casos/grupo-modelo/3.jpeg', alt: 'Grupo Modelo — imagen 3' },
+    { type: 'image', src: '/img/casos/grupo-modelo/4.jpeg', alt: 'Grupo Modelo — imagen 4' },
+    { type: 'image', src: '/img/casos/grupo-modelo/5.jpeg', alt: 'Grupo Modelo — imagen 5' },
+    { type: 'image', src: '/img/casos/grupo-modelo/6.jpeg', alt: 'Grupo Modelo — imagen 6' },
+    { type: 'image', src: '/img/casos/grupo-modelo/7.jpeg', alt: 'Grupo Modelo — imagen 7' },
   ],
   reto: '¿Cómo conectar, inspirar y alinear a 110 personas en un nuevo equipo?',
   descriptionLead: 'Vector 110 fue el concepto en el que combinamos las dimensiones más relevantes: Dirección y Magnitud.',
@@ -44,7 +49,18 @@ const CASO_GRUPO_MODELO: Caso = {
 
 const CASO_AB_INBEV_DIV: Caso = {
   cliente: 'AB INBEV - Alpina / Colombia, México, Ecuador',
-  media: [],
+  media: [
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/1.jpeg', alt: 'AB INBEV - Alpina — imagen 1' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/2.jpeg', alt: 'AB INBEV - Alpina — imagen 2' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/3.jpeg', alt: 'AB INBEV - Alpina — imagen 3' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/4.jpeg', alt: 'AB INBEV - Alpina — imagen 4' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/5.jpeg', alt: 'AB INBEV - Alpina — imagen 5' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/6.jpeg', alt: 'AB INBEV - Alpina — imagen 6' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/7.jpeg', alt: 'AB INBEV - Alpina — imagen 7' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/8.jpeg', alt: 'AB INBEV - Alpina — imagen 8' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/9.jpeg', alt: 'AB INBEV - Alpina — imagen 9' },
+    { type: 'image', src: '/img/casos/ab-inbev-alpina/10.jpeg', alt: 'AB INBEV - Alpina — imagen 10' },
+  ],
   reto: '¿Cómo un programa de diversidad e inclusión aumenta los indicadores de pertenencia en la organización?',
   descriptionLead: 'Diversidad e inclusión al alcance de tus manos fue el concepto con el que de manera experiencial y emotiva entregamos herramientas prácticas a más de 35 equipos en Alpina, Bavaria, Grupo Modelo y Cervecería Nacional.',
   description: 'La mano, símbolo universal de cercanía y conexión, nos permite explorar cinco conceptos fundamentales de la diversidad y la inclusión de forma simple, cercana y práctica.',
@@ -57,7 +73,14 @@ const CASO_AB_INBEV_DIV: Caso = {
 
 const CASO_AB_INBEV_LID: Caso = {
   cliente: 'AB INBEV / Perú, Ecuador',
-  media: [],
+  media: [
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/1.jpeg', alt: 'AB INBEV liderazgo — imagen 1' },
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/2.jpeg', alt: 'AB INBEV liderazgo — imagen 2' },
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/3.jpeg', alt: 'AB INBEV liderazgo — imagen 3' },
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/4.jpeg', alt: 'AB INBEV liderazgo — imagen 4' },
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/5.jpeg', alt: 'AB INBEV liderazgo — imagen 5' },
+    { type: 'image', src: '/img/casos/ab-inbev-liderazgo/6.jpeg', alt: 'AB INBEV liderazgo — imagen 6' },
+  ],
   reto: '¿Cómo lideramos con humanidad sin perder de vista los resultados?',
   descriptionLead: 'Ese fue el reto que varias organizaciones nos invitaron a resolver a través del liderazgo.',
   description: 'Diseñamos tres experiencias para acompañar el liderazgo en cada etapa: Beer Leader para el talento de alto potencial, Lidera+ para quienes comenzaban a liderar y Mi Otro Yo, un programa de mentoría que conectó la experiencia con el potencial. Cada iniciativa se adaptó a las necesidades de sus participantes a través de formatos presenciales e híbridos.',
@@ -70,7 +93,16 @@ const CASO_AB_INBEV_LID: Caso = {
 
 const CASO_PRIMAX: Caso = {
   cliente: 'Primax / Colombia',
-  media: [],
+  media: [
+    { type: 'image', src: '/img/casos/primax/1.jpeg', alt: 'Primax — imagen 1' },
+    { type: 'image', src: '/img/casos/primax/2.jpeg', alt: 'Primax — imagen 2' },
+    { type: 'image', src: '/img/casos/primax/3.jpeg', alt: 'Primax — imagen 3' },
+    { type: 'image', src: '/img/casos/primax/4.jpeg', alt: 'Primax — imagen 4' },
+    { type: 'image', src: '/img/casos/primax/5.jpeg', alt: 'Primax — imagen 5' },
+    { type: 'image', src: '/img/casos/primax/6.jpeg', alt: 'Primax — imagen 6' },
+    { type: 'image', src: '/img/casos/primax/7.jpeg', alt: 'Primax — imagen 7' },
+    { type: 'image', src: '/img/casos/primax/8.jpeg', alt: 'Primax — imagen 8' },
+  ],
   reto: '¿Cómo llevar la cultura de la oficina central a los territorios lejanos?',
   descriptionLead: 'La solución, diseñar "Cultura sin Fronteras": talleres para conectar personas, comportamientos y propósito, haciendo que la esencia de Primax se viviera con la misma fuerza en todos los territorios.',
   description: 'Apalancados en los valores de Primax, diseñamos talleres experienciales de dos horas para transformar los valores de palabras escritas en comportamientos vividos, permitiendo que cada persona los experimentara, los hiciera propios y los llevara a su día a día.',
@@ -83,7 +115,14 @@ const CASO_PRIMAX: Caso = {
 
 const CASO_BANCO_FALABELLA: Caso = {
   cliente: 'Banco Falabella / Colombia',
-  media: [],
+  media: [
+    { type: 'image', src: '/img/casos/banco-falabella/1.jpeg', alt: 'Banco Falabella — imagen 1' },
+    { type: 'image', src: '/img/casos/banco-falabella/2.jpeg', alt: 'Banco Falabella — imagen 2' },
+    { type: 'image', src: '/img/casos/banco-falabella/3.jpeg', alt: 'Banco Falabella — imagen 3' },
+    { type: 'image', src: '/img/casos/banco-falabella/4.jpeg', alt: 'Banco Falabella — imagen 4' },
+    { type: 'image', src: '/img/casos/banco-falabella/5.jpeg', alt: 'Banco Falabella — imagen 5' },
+    { type: 'image', src: '/img/casos/banco-falabella/6.jpeg', alt: 'Banco Falabella — imagen 6' },
+  ],
   reto: 'Creímos que los mayores desafíos estaban en los procesos. ¡Estábamos equivocados!',
   descriptionLead: 'Descubrimos que el verdadero reto era conocerse, confiar y conectar con las personas detrás de cada cargo.',
   description: 'Para responder a este desafío, creamos "El problema no era Excel", una serie de talleres que invitaban a mirar más allá de los procesos para descubrir a la persona detrás del cargo, construyendo cercanía genuina, fortaleciendo la confianza y demostrando que los resultados nacen de mejores relaciones.',
@@ -96,7 +135,16 @@ const CASO_BANCO_FALABELLA: Caso = {
 
 const CASO_GRUPO_ALPINA: Caso = {
   cliente: 'Grupo Alpina / Colombia',
-  media: [],
+  media: [
+    { type: 'image', src: '/img/casos/grupo-alpina/1.jpeg', alt: 'Grupo Alpina — imagen 1' },
+    { type: 'image', src: '/img/casos/grupo-alpina/2.jpeg', alt: 'Grupo Alpina — imagen 2' },
+    { type: 'image', src: '/img/casos/grupo-alpina/3.jpeg', alt: 'Grupo Alpina — imagen 3' },
+    { type: 'image', src: '/img/casos/grupo-alpina/4.jpeg', alt: 'Grupo Alpina — imagen 4' },
+    { type: 'image', src: '/img/casos/grupo-alpina/5.jpeg', alt: 'Grupo Alpina — imagen 5' },
+    { type: 'image', src: '/img/casos/grupo-alpina/6.jpeg', alt: 'Grupo Alpina — imagen 6' },
+    { type: 'image', src: '/img/casos/grupo-alpina/7.jpeg', alt: 'Grupo Alpina — imagen 7' },
+    { type: 'image', src: '/img/casos/grupo-alpina/8.jpeg', alt: 'Grupo Alpina — imagen 8' },
+  ],
   reto: 'Una holding nace cuando las empresas descubren cómo generar sinergias para multiplicar su impacto.',
   descriptionLead: 'Antes de generar sinergias corporativas, las personas debían conocerse entre sí y comprender el aporte de cada empresa al grupo.',
   description: 'Para lograrlo, diseñamos un recorrido experiencial donde líderes de Alpina Colombia, Ecuador, Venezuela y Estados Unidos, junto con representantes de Don Maíz, Clover, Alpes, Fundación Alpina y Celan, dejaron de verse como empresas independientes para descubrirse como personas y grupo.',
@@ -181,10 +229,34 @@ export default function LandingMobile() {
 
       {/* Hero + Manifiesto con foto de fondo */}
       <div style={{
+        position: 'relative',
         background: `linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.55)), url('/img/hero-bg.png') center/cover no-repeat`,
         color: '#fff',
         borderBottom: '1.5px solid #fff',
       }}>
+        {/* Indicador de scroll */}
+        <div style={{
+          position: 'absolute',
+          right: 30,
+          bottom: 80,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 10,
+          color: '#fff',
+          pointerEvents: 'none',
+        }}>
+          <span style={{
+            writingMode: 'vertical-rl',
+            transform: 'rotate(180deg)',
+            fontSize: 10,
+            fontWeight: 700,
+            letterSpacing: '.24em',
+          }}>SCROLL</span>
+          <svg width="12" height="28" viewBox="0 0 14 36" fill="none">
+            <path d="M7 0V32M1 26L7 34L13 26" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+          </svg>
+        </div>
         <section style={{ padding: '24px 20px 48px' }}>
           <Image
             src="/brand/laborativo-logo.png"
@@ -228,6 +300,12 @@ export default function LandingMobile() {
           </div>
         </section>
       </div>
+
+      {/* Casos de éxito */}
+      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
+        <span className="tag">Casos de éxito</span>
+        <CasosCarouselMobile casos={CASOS} />
+      </section>
 
       {/* Qué hacemos */}
       <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)' }}>
@@ -286,12 +364,6 @@ export default function LandingMobile() {
         </div>
       </section>
 
-      {/* Casos de éxito */}
-      <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
-        <span className="tag">Casos de éxito</span>
-        <CasosCarouselMobile casos={CASOS} />
-      </section>
-
       {/* Testimonios */}
       <section style={{ padding: '48px 20px 56px', borderBottom: '1.5px solid var(--ink)', background: 'var(--paper)' }}>
         <div style={{ marginBottom: 22 }}>
@@ -306,7 +378,7 @@ export default function LandingMobile() {
       {/* Footer */}
       <footer style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: 6, fontSize: 9, color: 'var(--mute)', letterSpacing: '.08em', textTransform: 'uppercase', fontWeight: 600 }}>
         <span>Laborativo / Consultoría Creativa Basada en la Emoción</span>
-        <span>Quicklink · V0.1</span>
+        <span>Quicklink · V2.4</span>
       </footer>
 
     </div>
