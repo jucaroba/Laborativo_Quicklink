@@ -31,23 +31,40 @@ const valueStyle: CSSProperties = {
   margin: '4px 0 0',
 }
 
+type Estado = 'idle' | 'enviando' | 'ok' | 'error'
+
 export default function ContactoMobile() {
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [telefono, setTelefono] = useState('')
   const [mensaje, setMensaje] = useState('')
+  const [estado, setEstado] = useState<Estado>('idle')
+  const [mensajeError, setMensajeError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = `Quicklink — Mensaje de ${nombre || 'visitante'}`
-    const body = [
-      `Nombre: ${nombre}`,
-      `Email: ${email}`,
-      `Teléfono: ${telefono}`,
-      '',
-      mensaje,
-    ].join('\n')
-    window.location.href = `mailto:linamaria@laborativo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    if (estado === 'enviando') return
+    setEstado('enviando')
+    setMensajeError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, telefono, mensaje }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        throw new Error(data?.error || 'No pudimos enviar el mensaje. Intentá de nuevo.')
+      }
+      setEstado('ok')
+      setNombre('')
+      setEmail('')
+      setTelefono('')
+      setMensaje('')
+    } catch (err) {
+      setEstado('error')
+      setMensajeError(err instanceof Error ? err.message : 'Error desconocido al enviar.')
+    }
   }
 
   return (
@@ -108,13 +125,24 @@ export default function ContactoMobile() {
           <button
             type="submit"
             className="btn primary"
-            style={{ width: '100%', justifyContent: 'flex-end', boxSizing: 'border-box' }}
+            disabled={estado === 'enviando'}
+            style={{ width: '100%', justifyContent: 'flex-end', boxSizing: 'border-box', opacity: estado === 'enviando' ? 0.6 : 1 }}
           >
-            Enviar
+            {estado === 'enviando' ? 'Enviando…' : estado === 'ok' ? '¡Enviado!' : 'Enviar'}
             <svg width="14" height="10" viewBox="0 0 20 14" fill="none">
               <path d="M1 7H19M19 7L13 1M19 7L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
             </svg>
           </button>
+          {estado === 'ok' && (
+            <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 12, color: 'var(--ink-2)' }}>
+              ¡Gracias! Te respondemos pronto.
+            </p>
+          )}
+          {estado === 'error' && (
+            <p style={{ gridColumn: '1 / -1', margin: 0, fontSize: 12, color: 'var(--destructive)' }}>
+              {mensajeError}
+            </p>
+          )}
         </form>
       </div>
 
