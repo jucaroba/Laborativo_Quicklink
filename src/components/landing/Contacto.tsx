@@ -37,6 +37,7 @@ export default function Contacto() {
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [telefono, setTelefono] = useState('')
+  const [empresa, setEmpresa] = useState('')
   const [mensaje, setMensaje] = useState('')
   const [estado, setEstado] = useState<Estado>('idle')
   const [mensajeError, setMensajeError] = useState('')
@@ -50,7 +51,7 @@ export default function Contacto() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, email, telefono, mensaje }),
+        body: JSON.stringify({ nombre, email, telefono, empresa, mensaje }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
@@ -60,6 +61,7 @@ export default function Contacto() {
       setNombre('')
       setEmail('')
       setTelefono('')
+      setEmpresa('')
       setMensaje('')
     } catch (err) {
       setEstado('error')
@@ -117,24 +119,41 @@ export default function Contacto() {
                   type="tel"
                   placeholder="Teléfono"
                   value={telefono}
-                  onChange={e => setTelefono(e.target.value)}
+                  onChange={e => setTelefono(e.target.value.replace(/[^0-9]/g, ''))}
+                  inputMode="numeric"
+                  pattern="[0-9]+"
+                  title="Solo números"
+                  style={inputStyle}
+                />
+                <input
+                  type="text"
+                  placeholder="Empresa"
+                  value={empresa}
+                  onChange={e => setEmpresa(e.target.value)}
                   style={inputStyle}
                 />
                 <textarea
                   placeholder="Mensaje"
                   value={mensaje}
                   onChange={e => setMensaje(e.target.value)}
-                  style={{ ...inputStyle, gridRow: 'span 2', resize: 'none', fontFamily: 'inherit' }}
+                  style={{ ...inputStyle, gridColumn: '1 / 2', resize: 'none', fontFamily: 'inherit', minHeight: 110 }}
                   required
                 />
                 <button
                   type="submit"
                   className="btn primary"
                   disabled={estado === 'enviando'}
-                  style={{ width: '100%', justifyContent: 'flex-end', boxSizing: 'border-box', opacity: estado === 'enviando' ? 0.6 : 1 }}
+                  style={{
+                    alignSelf: 'end',
+                    justifySelf: 'end',
+                    padding: '10px 18px',
+                    fontSize: 13,
+                    boxSizing: 'border-box',
+                    opacity: estado === 'enviando' ? 0.6 : 1,
+                  }}
                 >
                   {estado === 'enviando' ? 'Enviando…' : estado === 'ok' ? '¡Enviado!' : 'Enviar'}
-                  <svg width="14" height="10" viewBox="0 0 20 14" fill="none">
+                  <svg width="12" height="9" viewBox="0 0 20 14" fill="none">
                     <path d="M1 7H19M19 7L13 1M19 7L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
                   </svg>
                 </button>
@@ -151,7 +170,7 @@ export default function Contacto() {
             </div>
 
             {/* Sub-columna derecha: info */}
-            <div style={{ paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 12, alignSelf: 'end' }}>
+            <div style={{ paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 8, alignSelf: 'end' }}>
               <div>
                 <h3 style={labelStyle}>Oficina</h3>
                 <p style={valueStyle}>Carrera 15a # 106-41</p>

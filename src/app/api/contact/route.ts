@@ -16,7 +16,7 @@ function escapeHtml(value: string): string {
 }
 
 export async function POST(request: Request) {
-  let body: { nombre?: string; email?: string; telefono?: string; mensaje?: string }
+  let body: { nombre?: string; email?: string; telefono?: string; empresa?: string; mensaje?: string }
   try {
     body = await request.json()
   } catch {
@@ -26,10 +26,19 @@ export async function POST(request: Request) {
   const nombre = (body.nombre ?? '').trim()
   const email = (body.email ?? '').trim()
   const telefono = (body.telefono ?? '').trim()
+  const empresa = (body.empresa ?? '').trim()
   const mensaje = (body.mensaje ?? '').trim()
 
   if (!nombre || !email || !mensaje) {
     return NextResponse.json({ error: 'Nombre, email y mensaje son obligatorios' }, { status: 400 })
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ error: 'Email inválido' }, { status: 400 })
+  }
+
+  if (telefono && !/^[0-9]+$/.test(telefono)) {
+    return NextResponse.json({ error: 'El teléfono solo debe contener números' }, { status: 400 })
   }
 
   const subject = `Quicklink — Mensaje de ${nombre}`
@@ -37,6 +46,7 @@ export async function POST(request: Request) {
     `Nombre: ${nombre}`,
     `Email: ${email}`,
     telefono ? `Teléfono: ${telefono}` : null,
+    empresa ? `Empresa: ${empresa}` : null,
     '',
     mensaje,
   ].filter(Boolean).join('\n')
@@ -47,6 +57,7 @@ export async function POST(request: Request) {
       <p style="margin: 0 0 4px;"><strong>Nombre:</strong> ${escapeHtml(nombre)}</p>
       <p style="margin: 0 0 4px;"><strong>Email:</strong> ${escapeHtml(email)}</p>
       ${telefono ? `<p style="margin: 0 0 4px;"><strong>Teléfono:</strong> ${escapeHtml(telefono)}</p>` : ''}
+      ${empresa ? `<p style="margin: 0 0 4px;"><strong>Empresa:</strong> ${escapeHtml(empresa)}</p>` : ''}
       <p style="margin: 16px 0 4px;"><strong>Mensaje:</strong></p>
       <p style="margin: 0; white-space: pre-line;">${escapeHtml(mensaje)}</p>
     </div>
