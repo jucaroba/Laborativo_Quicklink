@@ -10,11 +10,9 @@ Muchos problemas que parecen de negocio en realidad tienen un origen profundamen
   `La emoción es el elemento más inestable y al mismo tiempo más poderoso de cualquier organización.
 No se ve. No se mide fácilmente.
 Pero transforma todo.`,
-  `Sin emoción no hay intención. Sin intención no hay conciencia.
-Y si no hay conciencia…
-nada cambia.`,
   `En Laborativo aprendimos a trabajar con ella.
-Diseñamos experiencias donde la emoción sea una herramienta y no un accidente.`,
+Diseñamos experiencias donde la emoción sea una herramienta y no un accidente.
+Porque sin emoción nada cambia.`,
 ]
 
 const DIMENSIONES_COPY = [
