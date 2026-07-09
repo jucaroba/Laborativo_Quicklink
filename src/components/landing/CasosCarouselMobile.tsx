@@ -109,15 +109,15 @@ export default function CasosCarouselMobile({ casos }: Props) {
           </div>
         </div>
 
-        {/* Indicadores */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1.5px solid var(--ink)' }}>
+        {/* Indicadores — apilados full-width para que respiren en pantalla angosta */}
+        <div style={{ borderTop: '1.5px solid var(--ink)' }}>
           {active.indicadores.map((ind, i) => (
             <div key={i} style={{
-              padding: '14px 14px',
-              borderRight: i < active.indicadores.length - 1 ? '1.5px solid var(--ink)' : 'none',
+              padding: '16px 20px',
+              borderTop: i > 0 ? '1.5px solid var(--ink)' : 'none',
               display: 'flex',
               flexDirection: 'column',
-              height: 75,
+              minHeight: 68,
             }}>
               <IndicadorBoxMobile indicador={ind} />
             </div>
@@ -151,11 +151,11 @@ export default function CasosCarouselMobile({ casos }: Props) {
 function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
   if (indicador.kind === 'percent') {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 8 }}>
-        <div style={{ fontWeight: 900, fontSize: 26, letterSpacing: '-0.04em', lineHeight: 0.9, flexShrink: 0 }}>
+      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 14 }}>
+        <div style={{ fontWeight: 900, fontSize: 38, letterSpacing: '-0.04em', lineHeight: 0.9, flexShrink: 0, minWidth: 72 }}>
           {indicador.value}
         </div>
-        <div style={{ fontSize: 10, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.35, flex: 1 }}>
+        <div style={{ fontSize: 12.5, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
           {indicador.label}
         </div>
       </div>
@@ -163,12 +163,12 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
   }
   if (indicador.kind === 'ratio') {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 8 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 0, fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink)', flexShrink: 0 }}>
-          <span style={{ fontSize: 26 }}>{indicador.num}</span>
-          <span style={{ fontSize: 26 }}>/{indicador.den}</span>
+      <div style={{ display: 'flex', alignItems: 'center', height: '100%', gap: 14 }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 0, fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.04em', color: 'var(--ink)', flexShrink: 0, minWidth: 72 }}>
+          <span style={{ fontSize: 38 }}>{indicador.num}</span>
+          <span style={{ fontSize: 38 }}>/{indicador.den}</span>
         </div>
-        <div style={{ fontSize: 10, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.35, flex: 1 }}>
+        <div style={{ fontSize: 12.5, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
           {indicador.label}
         </div>
       </div>
@@ -183,10 +183,10 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
             paddingTop: j > 0 ? 5 : 0,
             borderTop: j > 0 ? '1px solid var(--line-soft)' : 'none',
           }}>
-            <div style={{ fontWeight: 900, fontSize: 16, letterSpacing: '-0.04em', lineHeight: 0.95, flexShrink: 0 }}>
+            <div style={{ fontWeight: 900, fontSize: 22, letterSpacing: '-0.04em', lineHeight: 0.95, flexShrink: 0, minWidth: 56 }}>
               {item.value}
             </div>
-            <div style={{ fontSize: 9, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.35, flex: 1 }}>
+            <div style={{ fontSize: 11.5, letterSpacing: 'normal', fontWeight: 500, color: 'var(--ink)', lineHeight: 1.4, flex: 1 }}>
               {item.label}
             </div>
           </div>
@@ -198,7 +198,7 @@ function IndicadorBoxMobile({ indicador }: { indicador: Indicador }) {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 4, justifyContent: 'center', height: '100%' }}>
         {indicador.items.map((item, j) => (
-          <div key={j} style={{ display: 'flex', alignItems: 'baseline', gap: 4, fontSize: 9, lineHeight: 1.35 }}>
+          <div key={j} style={{ display: 'flex', alignItems: 'baseline', gap: 6, fontSize: 11.5, lineHeight: 1.4 }}>
             <span style={{ fontWeight: 900, color: 'var(--ink)', flexShrink: 0 }}>{item.title}</span>
             <span style={{ color: 'var(--ink-2)', fontWeight: 500 }}>{item.description}</span>
           </div>
