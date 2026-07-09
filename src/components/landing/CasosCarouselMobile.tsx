@@ -14,8 +14,6 @@ export default function CasosCarouselMobile({ casos }: Props) {
   const [mediaIndex, setMediaIndex] = useState(0)
   const total = casos.length
   const active = casos[index]
-  const prev = casos[(index - 1 + total) % total]
-  const next = casos[(index + 1) % total]
 
   useEffect(() => {
     setMediaIndex(0)
@@ -133,10 +131,8 @@ export default function CasosCarouselMobile({ casos }: Props) {
               <path d="M19 7H1M1 7L7 1M1 7L7 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
             </svg>
           </button>
-          <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}>{prev.cliente}</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase' }}>{next.cliente}</span>
           <button type="button" onClick={() => go(1)} aria-label="Caso siguiente" className="testimonios-nav">
             <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
               <path d="M1 7H19M19 7L13 1M19 7L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
