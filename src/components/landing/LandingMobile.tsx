@@ -161,6 +161,21 @@ const CASOS: Caso[] = [
   CASO_GRUPO_ALPINA,
 ]
 
+const EXPERIENCIAS = [
+  {
+    titulo: 'Experiencias indoor:',
+    descripcion: 'Las experiencias de ambientes cerrados en la educación experiencial permiten un aprendizaje detallado y preciso. Esta configuración facilita la implementación de simulaciones complejas y proporciona un espacio seguro para la retroalimentación inmediata y la profundización en los conceptos.',
+    keywords: 'claridad – enfoque',
+    img: '/img/experiencias/indoor.webp',
+  },
+  {
+    titulo: 'Experiencias outdoor:',
+    descripcion: 'Las experiencias al aire libre abren la oportunidad de trabajar en las habilidades prácticas que quedan expuestas a medida que se está más inmerso en las actividades propuestas. Enfrentar desafíos reales y desarrollar una conexión profunda con el medio ambiente y el equipo enriquece el aprendizaje con experiencias tangibles y memorables.',
+    keywords: 'flexibilidad – apertura',
+    img: '/img/experiencias/outdoor.webp',
+  },
+]
+
 const TESTIMONIOS: Testimonio[] = [
   {
     quote: 'Crearon un cambio de mindset en nuestros líderes y generaron conciencia sobre el liderazgo inclusivo, entendiendo rápidamente la cultura y necesidades de la compañía.',
@@ -336,6 +351,34 @@ export default function LandingMobile() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Experiencias indoor / outdoor */}
+      <section style={{ borderBottom: '1.5px solid var(--ink)', background: '#0A0A0A' }}>
+        {EXPERIENCIAS.map((exp, i) => (
+          <div key={exp.titulo} style={{
+            position: 'relative',
+            minHeight: 300,
+            padding: '40px 24px 32px',
+            display: 'flex',
+            flexDirection: 'column',
+            color: '#fff',
+            borderTop: i === 1 ? '1.5px solid #fff' : 'none',
+            background: `linear-gradient(rgba(10,10,10,.5), rgba(10,10,10,.62)), url('${exp.img}') center/cover no-repeat`,
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <h2 style={{ fontWeight: 900, fontSize: 'clamp(30px, 8vw, 40px)', lineHeight: 0.98, letterSpacing: '-0.025em', color: '#fff' }}>
+                {exp.titulo}
+              </h2>
+              <p style={{ marginTop: 16, fontSize: 14, lineHeight: 1.6, fontWeight: 500, color: '#fff' }}>
+                {exp.descripcion}
+              </p>
+            </div>
+            <div style={{ marginTop: 'auto', paddingTop: 28, textAlign: 'center' }}>
+              <span className="tag" style={{ background: '#fff', color: 'var(--ink)' }}>{exp.keywords}</span>
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* Nuestros amigos */}

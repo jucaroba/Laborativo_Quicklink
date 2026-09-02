@@ -220,6 +220,21 @@ const TESTIMONIOS: Testimonio[] = [
   },
 ]
 
+const EXPERIENCIAS = [
+  {
+    titulo: 'Experiencias indoor:',
+    descripcion: 'Las experiencias de ambientes cerrados en la educación experiencial permiten un aprendizaje detallado y preciso. Esta configuración facilita la implementación de simulaciones complejas y proporciona un espacio seguro para la retroalimentación inmediata y la profundización en los conceptos.',
+    keywords: 'claridad – enfoque',
+    img: '/img/experiencias/indoor.webp',
+  },
+  {
+    titulo: 'Experiencias outdoor:',
+    descripcion: 'Las experiencias al aire libre abren la oportunidad de trabajar en las habilidades prácticas que quedan expuestas a medida que se está más inmerso en las actividades propuestas. Enfrentar desafíos reales y desarrollar una conexión profunda con el medio ambiente y el equipo enriquece el aprendizaje con experiencias tangibles y memorables.',
+    keywords: 'flexibilidad – apertura',
+    img: '/img/experiencias/outdoor.webp',
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -356,6 +371,36 @@ export default function Home() {
                 <div style={{ width: 56, height: 8, background: 'var(--ink)' }} />
                 <h3 style={{ fontWeight: 900, fontSize: 26, letterSpacing: -.5, lineHeight: 1, marginTop: 15 }}>{d.h} / {d.pair}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.45, color: 'var(--ink-2)', margin: '8px 0 0', maxWidth: '30ch', fontWeight: 500, whiteSpace: 'pre-line' }}>{d.p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Experiencias indoor / outdoor — split screen full-bleed */}
+        <section style={{ borderBottom: '1.5px solid var(--ink)', background: '#0A0A0A' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+            {EXPERIENCIAS.map((exp, i) => (
+              <div key={exp.titulo} style={{
+                position: 'relative',
+                minHeight: 'clamp(400px, 50vh, 520px)',
+                padding: '56px 56px',
+                display: 'flex',
+                flexDirection: 'column',
+                color: '#fff',
+                borderLeft: i === 1 ? '1.5px solid #fff' : 'none',
+                background: `linear-gradient(rgba(10,10,10,.5), rgba(10,10,10,.6)), url('${exp.img}') center/cover no-repeat`,
+              }}>
+                <div style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
+                  <h2 style={{ fontWeight: 900, fontSize: 'clamp(34px, 3.4vw, 52px)', lineHeight: 0.95, letterSpacing: '-0.025em', color: '#fff' }}>
+                    {exp.titulo}
+                  </h2>
+                  <p style={{ margin: '22px auto 0', fontSize: 15, lineHeight: 1.6, fontWeight: 500, color: '#fff', maxWidth: '46ch' }}>
+                    {exp.descripcion}
+                  </p>
+                </div>
+                <div style={{ marginTop: 'auto', paddingTop: 40, textAlign: 'center' }}>
+                  <span className="tag" style={{ background: '#fff', color: 'var(--ink)' }}>{exp.keywords}</span>
+                </div>
               </div>
             ))}
           </div>
